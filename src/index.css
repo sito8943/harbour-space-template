@@ -17,9 +17,7 @@ hr {
 }
 
 h2 {
-  font-size: 48px;
-  line-height: 56px;
-  @apply font-semibold text-primary;
+  @apply font-semibold text-primary text-5xl ipadPro:text-4xl;
 }
 
 .center-vertical {
@@ -44,4 +42,5 @@ h2 {
   padding: 0 200px;
   min-height: 80vh;
   min-height: 80svh;
+  @apply desktop:px-40 ipadPro:px-20 ipad:px-10 mobile:px-3;
 }
