@@ -1,5 +1,6 @@
 // images
 import zeptolab from "../../assets/images/zeptolab.svg";
+import rectangleVector from "../../assets/images/rectangle-vector.png";
 
 // components
 import Card from "../../components/Card/Card";
@@ -10,7 +11,7 @@ function Hero() {
   return (
     <section
       id="hero"
-      className="section flex items-center justify-center gap-[120px]"
+      className="section grid grid-cols-2 grid-rows-1 gap-40 my-20 relative"
     >
       <Column>
         <h2>
@@ -24,7 +25,7 @@ function Hero() {
           eliminate the barriers to accessing exceptional education and career
           opportunities through a Masters Fellowship.{" "}
         </p>
-        <p>
+        <p className="my-10">
           <b>Position</b>: Marketing Performance
         </p>
         <a>
@@ -44,6 +45,11 @@ function Hero() {
         </Card>
         <GridCard />
       </Column>
+      <img
+        src={rectangleVector}
+        className="card-borders w-[600px] h-[257px] object-cover absolute right-0 -bottom-[100px]"
+        alt="A set of vectors arranged in a rectangle pattern."
+      />
     </section>
   );
 }
