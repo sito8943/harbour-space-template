@@ -1,0 +1,27 @@
+// images
+import zeptolab from "../../../assets/images/zeptolab.svg";
+
+// components
+import GridCard from "./GridCard";
+import Card from "../../../components/Card/Card";
+import Column from "../../../components/Column/Column";
+
+function SponsorSection() {
+  return (
+    <Column>
+      <div className="flex items-center gap-10 ipadPro:items-start ipadPro:flex-col-reverse">
+        <img src={zeptolab} alt="zeptolab's logo" />
+        <div className="desktop:flex desktop:items-start desktop:gap-1">
+          <p className="text-lg">Powered by:</p>
+          <p className="font-semibold desktop:text-lg">Zeptolab</p>
+        </div>
+      </div>
+      <Card header="Application closes in" className="w-full">
+        <p className="text-2xl">6 Day : 22 Hrs : 56 Min : 13 Seg</p>
+      </Card>
+      <GridCard />
+    </Column>
+  );
+}
+
+export default SponsorSection;
