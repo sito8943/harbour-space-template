@@ -1,3 +1,9 @@
+.card {
+  padding: 40px 50px;
+  border: 1px solid #dadada;
+  border-radius: 5px;
+}
+
 .card-header {
   @apply text-primary font-bold text-base mb-3;
 }
