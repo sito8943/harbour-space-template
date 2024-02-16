@@ -12,6 +12,13 @@ p {
   @apply text-gray;
 }
 
+@media (max-width: 834px) {
+  p {
+    font-size: 18px;
+    line-height: 26px;
+  }
+}
+
 hr {
   border: 1px solid #dadada;
 }
