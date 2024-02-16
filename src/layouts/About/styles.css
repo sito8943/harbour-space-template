@@ -1,0 +1,44 @@
+.small-divider {
+  width: 27px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.divider {
+  width: 100%;
+}
+
+.about-body {
+  @apply text-base;
+}
+
+.about-card {
+  min-width: 320px;
+  width: 100%;
+}
+
+.grid-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto 24px auto;
+}
+
+.scholarship-value {
+  grid-area: 1 / 1 / 4 / 2;
+}
+
+.study-commitment {
+  grid-area: 1 / 2 / 2 / 3;
+}
+
+.work-commitment {
+  grid-area: 1 / 3 / 2 / 4;
+}
+
+.graduation {
+  grid-area: 2 / 2 / 3 / 4;
+}
+
+.a-full-time-contract {
+  grid-area: 3 / 2 / 4 / 4;
+}
