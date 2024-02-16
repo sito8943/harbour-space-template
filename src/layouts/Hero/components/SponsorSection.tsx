@@ -11,9 +11,9 @@ function SponsorSection() {
     <Column>
       <div className="flex items-center gap-10 ipadPro:items-start ipadPro:flex-col-reverse">
         <img src={zeptolab} alt="zeptolab's logo" />
-        <div className="desktop:flex desktop:items-start desktop:gap-1">
+        <div className="ipadPro:flex ipadPro:items-start ipadPro:gap-1">
           <p className="text-lg">Powered by:</p>
-          <p className="font-semibold desktop:text-lg">Zeptolab</p>
+          <p className="font-semibold ipadPro:text-lg">Zeptolab</p>
         </div>
       </div>
       <Card header="Application closes in" className="w-full">
