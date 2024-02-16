@@ -1,0 +1,7 @@
+.card-header {
+  @apply text-primary font-bold text-base mb-3;
+}
+
+.card-content {
+  @apply text-base;
+}
