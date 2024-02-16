@@ -10,7 +10,7 @@ function Navbar() {
       <div className="bg-primary flex items-center justify-between h-[65px] px-10 text-white">
         <div className="flex items-start gap-2">
           <img src={logo} alt="Harbour.Space's logo" />
-          <p className="uppercase leading-[18px]">/Interaction Design</p>
+          <span className="uppercase leading-[18px]">/Interaction Design</span>
         </div>
         <div>
           <button name="menu-button"></button>
