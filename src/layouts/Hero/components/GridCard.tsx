@@ -1,8 +1,9 @@
+// components
 import Card from "../../../components/Card/Card";
 
 function GridCard() {
   return (
-    <Card className="grid grid-cols-2 w-full gap-2">
+    <Card className="grid grid-cols-2 w-full gap-2 bg-white z-10">
       <div>
         <h3>Location</h3>
         <p className="card-content">Bangkok</p>
