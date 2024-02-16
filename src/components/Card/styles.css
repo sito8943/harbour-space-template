@@ -1,7 +1,11 @@
 .card {
   padding: 40px 50px;
-  border: 1px solid #dadada;
+
   border-radius: 5px;
+}
+
+.card-borders {
+  border: 1px solid #dadada;
 }
 
 .card h3 {

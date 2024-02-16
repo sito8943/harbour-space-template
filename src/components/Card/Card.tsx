@@ -11,7 +11,7 @@ function Card(props: CardPropType) {
   const { className = "", header, children } = props;
 
   return (
-    <div className={`card ${className}`}>
+    <div className={`card card-borders ${className}`}>
       {header && <h3 className="card-header">{header}</h3>}
       {children}
     </div>
