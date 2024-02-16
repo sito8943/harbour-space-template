@@ -17,7 +17,7 @@ function Navbar() {
         </div>
         <a
           href="#"
-          className="absolute right-[120px] center-vertical pt-2"
+          className="absolute right-[120px] center-vertical pt-2 ipadPro:hidden"
         >
           <button className="cta-apply-now">Apply now</button>
         </a>
