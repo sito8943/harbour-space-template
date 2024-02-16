@@ -20,7 +20,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: auto 24px auto;
-  @apply desktop:grid-cols-2;
+  @apply desktop:grid-cols-2 ipadPro:grid-cols-1;
 }
 
 .scholarship-value {
@@ -59,11 +59,22 @@
   .graduation {
     grid-area: 3 / 1 / 4 / 3;
   }
+
   .a-full-time-contract {
     grid-area: 4 / 1 / 5 / 3;
   }
 
   .grid-section {
     grid-template-rows: auto;
+  }
+}
+
+@media (max-width: 834px) {
+  .scholarship-value,
+  .study-commitment,
+  .work-commitment,
+  .graduation,
+  .a-full-time-contract {
+    grid-area: auto;
   }
 }
