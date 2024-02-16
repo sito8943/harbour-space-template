@@ -4,7 +4,7 @@
   border-radius: 5px;
 }
 
-.card-header {
+.card h3 {
   @apply text-primary font-bold text-base mb-3;
 }
 
