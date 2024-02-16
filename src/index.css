@@ -42,5 +42,5 @@ h2 {
   padding: 0 200px;
   min-height: 80vh;
   min-height: 80svh;
-  @apply desktop:px-40 ipadPro:px-20 ipad:px-10 mobile:px-3;
+  @apply desktop:px-20 ipadPro:px-10 ipad:px-5 mobile:px-3;
 }
