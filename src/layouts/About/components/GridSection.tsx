@@ -3,14 +3,14 @@ import Card from "../../../components/Card/Card";
 
 function GridSection() {
   return (
-    <div className="grid-section gap-10 w-full my-20">
+    <div className="grid-section gap-10 w-full my-20 ipadPro:px-10 ipad:px-5 mobile:px-3">
       <Card
-        className="scholarship-value about-card h-full flex flex-col"
+        className="scholarship-value about-card h-full flex flex-col ipadPro:border-none"
         header="Scholarship Value"
       >
         <p className="text-5xl flex-1">€31,300</p>
-        <hr className="divider my-10" />
-        <div className="flex flex-wrap gap-10 mt-5">
+        <hr className="divider my-10 ipadPro:hidden" />
+        <div className="flex flex-wrap gap-10 mt-5 ipadPro:mt-10">
           <div>
             <h3>Tuition covered</h3>
             <p>€20,900</p>
