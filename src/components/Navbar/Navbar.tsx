@@ -1,5 +1,5 @@
 // images
-import logo from "../../assets/logo.svg";
+import logo from "../../assets/images/logo.svg";
 
 // styles
 import "./styles.css";

@@ -1,5 +1,5 @@
 // images
-import zeptolab from "../../assets/zeptolab.svg";
+import zeptolab from "../../assets/images/zeptolab.svg";
 
 // components
 import Card from "../../components/Card/Card";
@@ -13,9 +13,9 @@ function Hero() {
       className="section flex items-center justify-center gap-[120px]"
     >
       <Column>
-        <h1 className="font-semibold text-primary">
+        <h2>
           Interaction Design <br /> Apprenticeship
-        </h1>
+        </h2>
         <p className="font-semibold">
           A fully funded work-study program to launch your tech career{" "}
         </p>
