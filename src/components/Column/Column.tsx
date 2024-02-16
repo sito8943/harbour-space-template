@@ -3,12 +3,13 @@ import "./styles.css";
 
 type ColumnPropType = {
   children: React.ReactNode;
+  className?: string;
 };
 
 function Column(props: ColumnPropType) {
-  const { children } = props;
+  const { children, className = "" } = props;
 
-  return <div className="start-column">{children}</div>;
+  return <div className={`start-column ${className}`}>{children}</div>;
 }
 
 export default Column;
