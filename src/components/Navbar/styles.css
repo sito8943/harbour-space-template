@@ -1,0 +1,7 @@
+.cta-apply-now {
+  box-shadow: 3px 10px 0px #22222269;
+  padding: 30px;
+  width: 120px;
+  height: 120px;
+  @apply uppercase text-lg font-bold flex items-center justify-center text-center bg-secondary rounded-full;
+}
