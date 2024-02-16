@@ -8,14 +8,21 @@ p {
   @apply text-gray;
 }
 
-h1 {
+h2 {
   font-size: 48px;
   line-height: 56px;
+  @apply font-semibold text-primary;
 }
 
 .center-vertical {
   top: 50%;
   transform: translateY(-50%);
+}
+
+.full-centered {
+  left: 50%;
+  top: 50%;
+  @apply -translate-y-[50%] -translate-x-[50%];
 }
 
 .cta-primary {
@@ -27,6 +34,6 @@ h1 {
 
 .section {
   padding: 0 200px;
-  min-height: 60vh;
-  min-height: 60svh;
+  min-height: 80vh;
+  min-height: 80svh;
 }
