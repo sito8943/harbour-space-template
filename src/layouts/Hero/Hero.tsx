@@ -15,12 +15,12 @@ function Hero() {
     <section id="hero" className="section hero-layout">
       <InfoSection />
       <SponsorSection />
-      <Column className="show-on-mobile">
+      <Column className="show-on-tablet">
         <TextGroup />
       </Column>
       <img
         src={rectangleVector}
-        className="card-borders w-[600px] h-[257px] object-cover absolute right-0 -bottom-[100px] desktop:hidden"
+        className="card-borders w-[600px] h-[257px] object-cover absolute right-0 bottom-10 desktop:hidden"
         alt="A set of vectors arranged in a rectangle pattern."
       />
     </section>

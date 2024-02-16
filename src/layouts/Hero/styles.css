@@ -11,3 +11,10 @@
 .show-on-tablet a {
   display: initial;
 }
+
+@media (min-width: 834px) {
+  .show-on-tablet p,
+  .show-on-tablet a {
+    @apply hidden;
+  }
+}
