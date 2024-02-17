@@ -15,7 +15,7 @@
 
 .accordion .item {
   min-height: 140px;
-  @apply overflow-hidden min-h-[140px] ipad:min-h-[95px];
+  @apply overflow-hidden min-h-[140px] ipadPro:min-h-[130px] ipad:min-h-[95px];
 }
 
 .accordion .item-box {

@@ -2,11 +2,11 @@
 import Navbar from "./components/Navbar/Navbar";
 import StickyBar from "./components/StickyBar/StickyBar";
 
-// layouts
-import Hero from "./layouts/Hero/Hero";
-import About from "./layouts/About/About";
-import Testimonials from "./layouts/Testimonials/Testimonials";
-import Faqs from "./layouts/Faqs/Faqs";
+// sections
+import Hero from "./sections/Hero/Hero";
+import About from "./sections/About/About";
+import Testimonials from "./sections/Testimonials/Testimonials";
+import Faqs from "./sections/Faqs/Faqs";
 
 function App() {
   return (

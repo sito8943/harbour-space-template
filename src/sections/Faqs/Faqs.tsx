@@ -64,8 +64,8 @@ function Faqs() {
   );
 
   return (
-    <section id="faqs" className="section w-full flex flex-col mb-20 mobile:px-7">
-      <div className="mb-10 ipad:mb-0 w-full flex items-center justify-between ipad:flex-col ipad:items-start ipad:justify-start ipad:gap-10">
+    <section id="faqs" className="section w-full flex flex-col mb-20 ipadPro:mb-40 mobile:px-7">
+      <div className="mb-10 ipad:mb-0 w-full flex items-center justify-between ipadPro:flex-col ipadPro:items-start ipadPro:justify-start ipadPro:gap-10">
         <h2>
           Frequently asked <br /> questions
         </h2>

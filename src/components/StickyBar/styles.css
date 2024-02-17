@@ -1,5 +1,5 @@
 .sticky-bar {
-  @apply z-30 bg-white flex items-center p-5 pl-20 gap-20 fixed bottom-0 left-0 w-full ;
+  @apply z-30 bg-white flex flex-wrap items-center p-5 pl-20 gap-x-20 gap-y-5 fixed bottom-0 left-0 w-full ;
 }
 
 .sticky-bar h4 {
