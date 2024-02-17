@@ -20,12 +20,13 @@ p {
   }
 }
 
-hr, .border {
+hr,
+.border {
   border: 1px solid #dadada;
 }
 
 h2 {
-  @apply font-semibold text-primary text-5xl ipadPro:text-4xl;
+  @apply font-semibold text-primary text-5xl leading-[56px] ipadPro:text-4xl ipadPro:leading-10;
 }
 
 .center-vertical {
