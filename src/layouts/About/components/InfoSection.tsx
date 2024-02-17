@@ -7,7 +7,7 @@ import Column from "../../../components/Column/Column";
 
 function InfoSection() {
   return (
-    <div className="flex items-center justify-center gap-[120px] mt-20 desktop:gap-20 desktop:mt-0 ipadPro:flex-col ipadPro:gap-10">
+    <div className="flex items-center justify-center gap-[120px] mt-20 desktop:gap-20 ipadPro:flex-col ipadPro:gap-10">
       <div className="relative flex items-center justify-center ipadPro:-mb-[51%]">
         <img
           src={circleVectors}
