@@ -1,7 +1,7 @@
 .card {
   padding: 40px 50px;
   border-radius: 5px;
-  @apply ipadPro:p-5;
+  @apply desktop:p-7 ipadPro:p-5;
 }
 
 .card-borders {
