@@ -1,0 +1,11 @@
+.sticky-bar {
+  @apply z-30 bg-white flex items-center p-5 pl-20 gap-20 fixed bottom-0 left-0 w-full ;
+}
+
+.sticky-bar h4 {
+  @apply font-semibold text-base;
+}
+
+.sticky-bar p {
+  @apply text-base;
+}
