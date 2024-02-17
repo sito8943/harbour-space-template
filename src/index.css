@@ -20,7 +20,7 @@ p {
   }
 }
 
-hr {
+hr, .border {
   border: 1px solid #dadada;
 }
 
