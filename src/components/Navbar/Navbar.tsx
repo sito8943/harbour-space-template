@@ -17,9 +17,10 @@ function Navbar() {
         </div>
         <a
           href="#"
-          className="absolute right-[120px] center-vertical pt-2 ipadPro:hidden"
+          aria-label="go to apply to the scholarship"
+          className="absolute right-[120px] center-vertical mt-1 ipadPro:hidden cta-apply-now"
         >
-          <button className="cta-apply-now">Apply now</button>
+          Apply now
         </a>
       </div>
     </header>

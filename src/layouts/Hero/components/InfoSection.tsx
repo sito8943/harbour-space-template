@@ -18,8 +18,12 @@ function InfoSection() {
       <p className="my-7">
         <b>Position</b>: Marketing Performance
       </p>
-      <a>
-        <button className="cta-primary">Apply now</button>
+      <a
+        href="#"
+        aria-label="go to apply to the scholarship"
+        className="cta-primary"
+      >
+        Apply now
       </a>
     </Column>
   );
