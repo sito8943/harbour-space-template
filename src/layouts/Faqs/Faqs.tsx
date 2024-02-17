@@ -64,7 +64,7 @@ function Faqs() {
   );
 
   return (
-    <section id="faqs" className="section w-full flex flex-col mb-10">
+    <section id="faqs" className="section w-full flex flex-col mb-20">
       <div className="w-full flex items-center justify-between">
         <h2>
           Frequently asked <br /> questions
