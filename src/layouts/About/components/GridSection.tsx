@@ -8,20 +8,20 @@ function GridSection() {
         className="scholarship-value about-card h-full flex flex-col ipadPro:border-none"
         header="Scholarship Value"
       >
-        <p className="text-5xl flex-1">€31,300</p>
-        <hr className="divider my-10 ipadPro:hidden" />
-        <div className="flex flex-wrap gap-10 mt-5 ipadPro:mt-10">
+        <p className="text-5xl ipadPro:text-2xl flex-1">€31,300</p>
+        <hr className="divider my-[55px] ipadPro:hidden" />
+        <div className="flex flex-wrap gap-10 mt-5 desktop:gap-2 ipadPro:mt-10">
           <div>
             <h3>Tuition covered</h3>
-            <p>€20,900</p>
+            <p className="text-base ipadPro:text-2xl">€20,900</p>
           </div>
           <div>
             <h3>Remaining</h3>
-            <p>€2,000</p>
+            <p className="text-base ipadPro:text-2xl">€2,000</p>
           </div>
           <div>
             <h3>Living stipend</h3>
-            <p>€8,400 (€700/month)</p>
+            <p className="text-base ipadPro:text-2xl">€8,400 (€700/month)</p>
           </div>
         </div>
       </Card>
