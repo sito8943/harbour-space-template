@@ -9,6 +9,7 @@ body {
 p {
   font-size: 22px;
   line-height: 32px;
+  text-wrap: pretty;
   @apply text-gray;
 }
 
