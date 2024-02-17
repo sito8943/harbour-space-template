@@ -1,0 +1,40 @@
+.accordion {
+  transition: grid-template-rows 600ms ease-in;
+  @apply w-full grid;
+}
+
+.accordion hr {
+  @apply w-full my-10;
+}
+
+.accordion h3 {
+  font-size: 22px;
+  width: 40%;
+  @apply text-primary font-bold;
+}
+
+.accordion .item {
+  min-height: 140px;
+  @apply overflow-hidden;
+}
+
+.accordion .item-box {
+  @apply relative flex w-full;
+}
+
+.accordion .item-content {
+  width: 50%;
+  @apply pt-1 pr-4 flex flex-col gap-5;
+}
+
+.accordion button {
+  @apply w-12 h-12 flex items-center justify-center absolute -top-1 right-0 rounded-full;
+}
+
+.accordion .reduce {
+  @apply bg-primary;
+}
+
+.accordion .expand {
+  border: 1px solid #dadada;
+}
