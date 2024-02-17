@@ -1,5 +1,6 @@
 // components
 import Navbar from "./components/Navbar/Navbar";
+import StickyBar from "./components/StickyBar/StickyBar";
 
 // layouts
 import Hero from "./layouts/Hero/Hero";
@@ -11,6 +12,7 @@ function App() {
   return (
     <>
       <Navbar />
+      <StickyBar />
       <main>
         <Hero />
         <About />
