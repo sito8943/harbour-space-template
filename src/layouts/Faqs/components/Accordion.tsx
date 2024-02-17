@@ -1,4 +1,4 @@
-import { Fragment, useMemo, useState } from "react";
+import { Fragment, useCallback, useMemo, useState } from "react";
 import { css } from "@emotion/css";
 
 // image
@@ -34,19 +34,27 @@ const renderHtml = (objectElement: HTMLItem) => {
 };
 
 function Accordion(props: AccordionPropType) {
-  const { className = "", items, defaultActive = 0 } = props;
+  const { className = "", items, defaultActive = -1 } = props;
 
   const [activeItem, setActiveItem] = useState<number>(defaultActive);
+
+  const toggleItem = useCallback(
+    (newToActivate: number) =>
+      newToActivate === activeItem
+        ? setActiveItem(-1)
+        : setActiveItem(newToActivate),
+    [activeItem]
+  );
 
   const renderItems = useMemo(
     () =>
       items.map((item, i) => (
         <Fragment key={item.question}>
           <li className="item">
-            <hr />
+            <hr className={i === 0 ? "ipad:opacity-0 ipad:mt-0" : ""} />
             <div className="item-box">
               <button
-                onClick={() => setActiveItem(i)}
+                onClick={() => toggleItem(i)}
                 name={`${activeItem === i ? "reduce" : "expand"}`}
                 aria-label={`click to ${
                   activeItem === i ? "reduce" : "expand"
@@ -71,7 +79,7 @@ function Accordion(props: AccordionPropType) {
           </li>
         </Fragment>
       )),
-    [items, activeItem]
+    [items, activeItem, toggleItem]
   );
 
   const gridRowsExpand = useMemo(

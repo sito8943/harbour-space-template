@@ -64,19 +64,21 @@ function Faqs() {
   );
 
   return (
-    <section id="faqs" className="section w-full flex flex-col mb-20">
-      <div className="w-full flex items-center justify-between">
+    <section id="faqs" className="section w-full flex flex-col mb-20 mobile:px-7">
+      <div className="mb-10 ipad:mb-0 w-full flex items-center justify-between ipad:flex-col ipad:items-start ipad:justify-start ipad:gap-10">
         <h2>
           Frequently asked <br /> questions
         </h2>
-        <div className="flex items-center gap-10">
+        <div className="flex items-center gap-10 ipadPro:w-full mobile:gap-2 mobile:items-start mobile:flex-col">
           <p>Filter by:</p>
-          <div>
-            <div className="flex items-center justify-center gap-2 border rounded-[100px] py-3 px-5">
-              <p className="text-primary font-semibold">{filters[filterBy]}</p>
+          <div className="ipadPro:flex-1">
+            <div className="flex items-center justify-between gap-2 border rounded-[100px] py-3 px-5">
+              <p className="text-primary font-semibold ipadPro:text-lg">
+                {filters[filterBy]}
+              </p>
               <div className="w-[30px] h-[30px] flex items-center justify-center">
                 <img
-                  className="w-4 h-4"
+                  className="w-4 h-4 ipadPro:w-3 ipadPro:h-3"
                   src={chevronDown}
                   alt="Downward-pointing chevron icon"
                 />

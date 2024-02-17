@@ -4,18 +4,18 @@
 }
 
 .accordion hr {
-  @apply w-full my-10;
+  @apply w-full my-10 ipad:my-6;
 }
 
 .accordion h3 {
   font-size: 22px;
   width: 40%;
-  @apply text-primary font-bold;
+  @apply text-primary font-bold ipad:hidden;
 }
 
 .accordion .item {
   min-height: 140px;
-  @apply overflow-hidden;
+  @apply overflow-hidden min-h-[140px] ipad:min-h-[95px];
 }
 
 .accordion .item-box {
@@ -24,7 +24,7 @@
 
 .accordion .item-content {
   width: 50%;
-  @apply pt-1 pr-4 flex flex-col gap-5;
+  @apply pt-1 pr-4 flex flex-col gap-5 ipad:pr-0 ipad:w-full;
 }
 
 .accordion button {
