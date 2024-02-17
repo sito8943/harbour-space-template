@@ -1,20 +1,3 @@
 .hero-layout {
-  @apply grid grid-cols-2 grid-rows-1 gap-40 my-20 relative ipadPro:flex ipadPro:flex-col ipadPro:gap-20 ipadPro:mb-0;
-}
-
-.hide-on-tablet p,
-.hide-on-tablet a {
-  @apply ipadPro:hidden;
-}
-
-.show-on-tablet p,
-.show-on-tablet a {
-  display: initial;
-}
-
-@media (min-width: 835px) {
-  .show-on-tablet p,
-  .show-on-tablet a {
-    @apply hidden;
-  }
+  @apply grid grid-cols-2 grid-rows-1 gap-40 my-20 relative ipadPro:flex ipadPro:flex-col-reverse ipadPro:gap-20 ipadPro:mb-0 ipadPro:relative;
 }
