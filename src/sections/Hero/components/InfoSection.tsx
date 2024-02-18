@@ -4,14 +4,20 @@ import { Column } from "components";
 // image
 import hand from "assets/images/hand.png";
 
+// providers
+import { useScholarship } from "providers";
+
+// utils
+import { renderArrayOfHtml } from "utils";
+
 function InfoSection() {
+  const { scholarship } = useScholarship();
+
   return (
     <Column className="ipadPro:px-5">
       <div className="ipadPro:absolute ipadPro:top-0 ipadPro:left-0 ipadPro:pl-10 ipad:pl-5 mobile:pl-3">
         <div className="relative">
-          <h2>
-            Interaction Design <br /> Apprenticeship
-          </h2>
+          <h2>{scholarship.name}</h2>
           <img
             src={hand}
             className="absolute -top-[100px] -right-[100px] ipad:w-[200px] ipad:h-[200px] ipad:-top-[110px] ipad:-right-[70px]"
@@ -19,14 +25,7 @@ function InfoSection() {
           />
         </div>
       </div>
-      <p className="font-semibold">
-        A fully funded work-study program to launch your tech career{" "}
-      </p>
-      <p>
-        Harbour.Space has partnered with SCG to empower driven talent and
-        eliminate the barriers to accessing exceptional education and career
-        opportunities through a Masters Fellowship.{" "}
-      </p>
+      {renderArrayOfHtml(scholarship.description)}
       <p className="my-7">
         <b>Position</b>: Marketing Performance
       </p>
