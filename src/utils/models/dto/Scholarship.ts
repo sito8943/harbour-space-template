@@ -1,5 +1,6 @@
 import { HtmlItem, HtmlList } from "../HtmlItem";
 import { Program } from "./Program";
+import { Location } from "./Location";
 
 export enum DegreeEnum {
   master = "Master",
@@ -12,7 +13,7 @@ export type Scholarship = {
   description: HtmlItem[];
   location: Location;
   scholarship_start_date: string;
-  scholarship_end_date: string;
+  application_end_date: string;
   duration: 1;
   position: "";
   about: HtmlItem[];
