@@ -2,7 +2,7 @@
 import { GridSection, InfoSection } from "./components";
 
 // styles
-import "styles.css";
+import "./styles.css";
 
 function About() {
   return (
