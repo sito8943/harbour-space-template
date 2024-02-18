@@ -5,7 +5,7 @@ import minus from "../../../assets/images/minus.svg";
 import plus from "../../../assets/images/plus.svg";
 
 // types
-import { HtmlItem } from "../../../types/HtmlItem";
+import { HtmlItem } from "../../../utils/models/HtmlItem";
 
 export type AccordionItemType = {
   header: string;
