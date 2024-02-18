@@ -1,11 +1,11 @@
-import { Fragment, memo, useState } from "react";
+import { memo, useState } from "react";
 
 // image
 import minus from "assets/images/minus.svg";
 import plus from "assets/images/plus.svg";
 
 // types
-import { Faq, HtmlItem } from "utils";
+import { Faq, renderArrayOfHtml } from "utils";
 
 type AccordionItemPropType = Faq & {
   firstItem?: boolean;
@@ -17,14 +17,6 @@ function AccordionItem(prop: AccordionItemPropType) {
   const { firstItem, defaultOpened, onChange, type, question, answer } = prop;
 
   const [active, setActive] = useState(defaultOpened);
-
-  const renderHtml = (objectElement: HtmlItem) => {
-    const { type, data } = objectElement;
-    switch (type) {
-      default: // p
-        return <p>{data}</p>;
-    }
-  };
 
   return (
     <>
@@ -47,9 +39,7 @@ function AccordionItem(prop: AccordionItemPropType) {
             <p>
               <b>{question}</b>
             </p>
-            {answer.map((answerItem, i) => (
-              <Fragment key={i}>{renderHtml(answerItem)}</Fragment>
-            ))}
+            {renderArrayOfHtml(answer)}
           </div>
         </div>
       </li>
@@ -64,7 +54,8 @@ const AccordionItemMemo = memo(
     oldProps.question === newProps.question &&
     oldProps.answer === newProps.answer &&
     oldProps.firstItem === newProps.firstItem &&
-    oldProps.defaultOpened === newProps.defaultOpened
+    oldProps.defaultOpened === newProps.defaultOpened &&
+    oldProps.onChange === newProps.onChange
 );
 AccordionItemMemo.displayName = "AccordionItem";
 
