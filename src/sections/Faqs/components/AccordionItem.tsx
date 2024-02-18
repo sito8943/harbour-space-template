@@ -1,17 +1,16 @@
-// image
 import { Fragment, memo, useState } from "react";
+
+// image
 import minus from "../../../assets/images/minus.svg";
 import plus from "../../../assets/images/plus.svg";
 
-type HTMLItem = {
-  type: "paragraph";
-  data: string;
-};
+// types
+import { HtmlItem } from "../../../types/HtmlItem";
 
 export type AccordionItemType = {
   header: string;
   question: string;
-  answer: HTMLItem[];
+  answer: HtmlItem[];
 };
 
 type AccordionItemPropType = AccordionItemType & {
@@ -25,7 +24,7 @@ function AccordionItem(prop: AccordionItemPropType) {
 
   const [active, setActive] = useState(defaultOpened);
 
-  const renderHtml = (objectElement: HTMLItem) => {
+  const renderHtml = (objectElement: HtmlItem) => {
     const { type, data } = objectElement;
     switch (type) {
       default: // p
