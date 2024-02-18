@@ -3,5 +3,9 @@ export class ScholarshipApiClient {
     return "https://pre-prod.harbour.space/api/v1/scholarship_pages/";
   }
 
-  getBySlug(slug: string) {}
+  async getBySlug(slug: string) {
+    return fetch(`${this.getBaseUrl()}${slug}`).then((response) =>
+      response.json()
+    );
+  }
 }
