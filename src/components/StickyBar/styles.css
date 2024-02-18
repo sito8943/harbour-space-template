@@ -1,6 +1,12 @@
-@media (min-width: 835px) {
+@media (min-width: 1342px) {
   .sticky-bar {
-    @apply fixed bottom-0 left-0 flex flex-wrap items-center;
+    @apply fixed bottom-0 left-0;
+  }
+}
+
+@media (min-width: 834px) {
+  .sticky-bar {
+    @apply flex flex-wrap items-center;
   }
 }
 
