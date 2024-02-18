@@ -1,11 +1,25 @@
+import { useMemo } from "react";
+
 // images
 import zeptolab from "assets/images/zeptolab.svg";
 
+// providers
+import { useScholarship } from "providers";
+
 // components
+import { Card, Column, Countdown } from "components";
 import GridCard from "./GridCard";
-import { Card, Column } from "components";
 
 function SponsorSection() {
+  const { scholarship } = useScholarship();
+
+  const difference = useMemo(
+    () =>
+      new Date(scholarship.scholarship_start_date).getTime() -
+      new Date(scholarship.application_end_date).getTime(),
+    [scholarship]
+  );
+
   return (
     <Column>
       <div className="flex items-center gap-10 ipadPro:items-start ipadPro:flex-col-reverse ipadPro:mt-40">
@@ -17,7 +31,7 @@ function SponsorSection() {
       </div>
       <Card header="Application closes in" className="w-full">
         <p className="text-2xl ipadPro:text-xl">
-          6 Day : 22 Hrs : 56 Min : 13 Seg
+          <Countdown start={difference} />
         </p>
       </Card>
       <GridCard />
