@@ -1,6 +1,9 @@
-import React from "react";
+type SplashScreenPropType = {
+  isLoading: boolean;
+  error: Error | null;
+};
 
-function SplashScreen() {
+function SplashScreen(props: SplashScreenPropType) {
   return <div></div>;
 }
 
