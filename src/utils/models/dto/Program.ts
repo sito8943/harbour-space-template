@@ -2,6 +2,9 @@ import { ApplicationProcess } from "./ApplicationProcess";
 import { Company } from "./Company";
 import { HtmlItem } from "../HtmlItem";
 import { PhotoFile } from "./PhotoFile";
+import { Director } from "./Director";
+import { Instructor } from "./Instructor";
+import { Mentor } from "./Mentor";
 
 export type Program = {
   id: number;
@@ -15,4 +18,7 @@ export type Program = {
   program_logo: PhotoFile;
   json_logo: string;
   company: Company;
+  directors: Director[];
+  instructors: Instructor[];
+  mentors: Mentor[];
 };
