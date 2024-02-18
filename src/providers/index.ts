@@ -7,4 +7,9 @@ import {
   useHarbourSpaceApiClient,
 } from "./HarbourSpaceApiProvider";
 
-export { ScholarshipProvider };
+export {
+  ScholarshipProvider,
+  useScholarship,
+  HarbourSpaceApiClientProvider,
+  useHarbourSpaceApiClient,
+};
