@@ -1,9 +1,8 @@
 // sections
-import GridSection from "./components/GridSection";
-import InfoSection from "./components/InfoSection";
+import { GridSection, InfoSection } from "./components";
 
 // styles
-import "./styles.css";
+import "styles.css";
 
 function About() {
   return (
