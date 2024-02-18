@@ -1,53 +1,22 @@
 import { useMemo, useState } from "react";
 
 // images
-import chevronDown from "../../assets/images/chevron-down.svg";
+import chevronDown from "assets/images/chevron-down.svg";
 
 // components
-import { Accordion, AccordionItemType } from "./components";
+import { Accordion } from "./components";
 
-const filters = ["Program conditions"];
-const faqs: AccordionItemType[] = [
-  {
-    header: "Program conditions",
-    question: "What are my obligations?",
-    answer: [
-      {
-        type: "paragraph",
-        data: "We will compile your results to present to the University’s Board of Admissions and the company. If your profile is selected, you will be informed about the next steps via email.",
-      },
-      {
-        type: "paragraph",
-        data: "Classes are scheduled for three hours a day, five days a week, for a total of 48 contact hours including examinations, which means that studying requires active participation and maximum concentration.",
-      },
-      {
-        type: "paragraph",
-        data: "Lectures are held every day either in the morning or in the afternoon, and the final candidate is expected to spend 4-6 hours a day on their internship.",
-      },
-      {
-        type: "paragraph",
-        data: "Please be aware that you will have to coordinate your weekly schedule with the company and University.",
-      },
-    ],
-  },
-  {
-    header: "Program conditions",
-    question: "What are my obligations? 1",
-    answer: [
-      {
-        type: "paragraph",
-        data: "After your interview with the Admissions Office, you will be notified about whether you’re moving to the next stage of the application process within the next 10 calendar days. If there are any changes in the timeline, you will be informed by your Admissions Officer.",
-      },
-    ],
-  },
-];
+// providers
+import { useScholarship } from "providers";
 
 function Faqs() {
+  const { faqs, faqTypes } = useScholarship();
+
   const [filterBy, setFilterBy] = useState<number>(0);
 
-  const renderFilters = useMemo(
+  const renderFaqTypes = useMemo(
     () =>
-      filters
+      faqTypes
         .filter((_, i) => i !== filterBy)
         .map((filter, i) => (
           <li key={filter}>
@@ -63,6 +32,11 @@ function Faqs() {
     [filterBy]
   );
 
+  const filteredFaqs = useMemo(
+    () => faqs.filter((faq) => faq.type === faqTypes[filterBy]),
+    [filterBy, faqs]
+  );
+
   return (
     <section
       id="faqs"
@@ -75,9 +49,13 @@ function Faqs() {
         <div className="flex items-center gap-10 ipadPro:w-full mobile:gap-2 mobile:items-start mobile:flex-col">
           <p>Filter by:</p>
           <div className="ipadPro:w-full">
-            <div className="flex items-center justify-between gap-2 border rounded-[100px] py-3 px-5">
+            <button
+              name="filter-menu"
+              aria-label="click to open filter menu"
+              className="flex items-center justify-between gap-2 border rounded-[100px] py-3 px-5"
+            >
               <p className="text-primary font-semibold ipadPro:text-lg">
-                {filters[filterBy]}
+                {faqTypes[filterBy]}
               </p>
               <div className="w-[30px] h-[30px] flex items-center justify-center">
                 <img
@@ -86,12 +64,12 @@ function Faqs() {
                   alt="Downward-pointing chevron icon"
                 />
               </div>
-            </div>
-            <div className="hidden">{renderFilters}</div>
+            </button>
+            <div className="hidden">{renderFaqTypes}</div>
           </div>
         </div>
       </div>
-      <Accordion items={faqs} />
+      <Accordion items={filteredFaqs} />
     </section>
   );
 }
