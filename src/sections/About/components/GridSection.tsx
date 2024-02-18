@@ -1,46 +1,59 @@
 // components
 import Card from "components/Card/Card";
 
+// providers
+import { useScholarship } from "providers";
+
 function GridSection() {
+  const { scholarship } = useScholarship();
+
   return (
     <div className="grid-section gap-10 w-full my-20 ipadPro:px-10 ipad:px-5 mobile:px-3">
       <Card
         className="scholarship-value about-card h-full flex flex-col ipadPro:border-none"
         header="Scholarship Value"
       >
-        <p className="text-5xl ipadPro:text-2xl flex-1">€31,300</p>
+        <p className="text-5xl ipadPro:text-2xl flex-1">
+          €{scholarship.total_value.toLocaleString()}
+        </p>
         <hr className="divider my-[55px] ipadPro:hidden" />
         <div className="flex flex-wrap gap-10 mt-5 desktop:gap-2 ipadPro:mt-10">
           <div>
             <h3>Tuition covered</h3>
-            <p className="text-base ipadPro:text-2xl">€20,900</p>
+            <p className="text-base ipadPro:text-2xl">
+              €{scholarship.tuition.toLocaleString()}
+            </p>
           </div>
           <div>
             <h3>Remaining</h3>
-            <p className="text-base ipadPro:text-2xl">€2,000</p>
+            <p className="text-base ipadPro:text-2xl">
+              €
+              {(scholarship.total_value - scholarship.tuition).toLocaleString()}
+            </p>
           </div>
           <div>
             <h3>Living stipend</h3>
-            <p className="text-base ipadPro:text-2xl">€8,400 (€700/month)</p>
+            <p className="text-base ipadPro:text-2xl">
+              €{scholarship.stipend_per_year.toLocaleString()} (€
+              {scholarship.stipend_per_month.toLocaleString()}
+              /month)
+            </p>
           </div>
         </div>
       </Card>
       <Card className="study-commitment about-card" header="Study commitment">
-        <p className="text-2xl">3 hours / day</p>
+        <p className="text-2xl">{scholarship.study_commitment} hours / day</p>
         <hr className="small-divider" />
         <p className="work-commitment about-body">
-          You will complete 15 modules to graduate. Daily classes are 3 hours,
-          plus coursework to complete in your own time.
+          {scholarship.study_commitment_text}
         </p>
       </Card>
       <Card className="work-commitment about-card" header="Work commitment">
-        <p className="text-2xl">$31,300</p>
-        <hr className="small-divider" />
-        <p className="about-body">
-          Immerse yourself in the professional world during your apprenticeship.
-          You'll learn the ropes from the best and get to apply your newly
-          acquired knowledge in the field from day one.{" "}
+        <p className="text-2xl">
+          {scholarship.internship_commitment} hours / day
         </p>
+        <hr className="small-divider" />
+        <p className="about-body">{scholarship.internship_commitment_text}</p>
       </Card>
       <div className="graduation flex items-center gap-5">
         <hr className="w-full" />
@@ -48,10 +61,11 @@ function GridSection() {
         <hr className="w-full" />
       </div>
       <Card className="a-full-time-contract" header="A full-time contract">
-        <p className="text-2xl">1 Year / Full-Time</p>
+        <p className="text-2xl">{scholarship.duration} Year / Full-Time</p>
         <hr className="small-divider" />
         <p className="about-body">
-          You'll be guaranteed a 1 year contract with SCG upon graduation.{" "}
+          You'll be guaranteed a {scholarship.duration} year contract with SCG
+          upon graduation.{" "}
         </p>
       </Card>
     </div>
