@@ -1,6 +1,6 @@
 // images
-import menu from "../../assets/images/menu.png";
-import logo from "../../assets/images/logo.svg";
+import menu from "assets/images/menu.png";
+import logo from "assets/images/logo.svg";
 
 // styles
 import "./styles.css";
