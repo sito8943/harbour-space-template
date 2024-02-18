@@ -1,3 +1,5 @@
 import { addMeta, removeMeta } from "./meta";
 import { renderHtml, renderArrayOfHtml } from "./html";
-export { addMeta, removeMeta, renderHtml, renderArrayOfHtml };
+import { parseDate } from "./date";
+
+export { addMeta, removeMeta, renderHtml, renderArrayOfHtml, parseDate };
