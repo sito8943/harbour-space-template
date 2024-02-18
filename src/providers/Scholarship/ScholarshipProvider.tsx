@@ -1,7 +1,7 @@
 import { createContext, useContext, useEffect } from "react";
 
 // functions
-import { addMeta, removeMeta } from "utils/";
+import { addMeta, removeMeta } from "utils";
 
 // types
 import { ScholarshipProviderData, ScholarshipProviderProps } from "./types";

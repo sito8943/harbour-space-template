@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { Testimonial, OGMetaTag, HtmlMetaTag, Scholarship, Faq } from "utils/models";
+import { Testimonial, OGMetaTag, HtmlMetaTag, Scholarship, Faq } from "utils";
 
 export type ScholarshipRawData = {
   id: number;
