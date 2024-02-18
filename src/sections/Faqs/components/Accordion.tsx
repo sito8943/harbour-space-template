@@ -1,85 +1,40 @@
-import { Fragment, useCallback, useMemo, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import { css } from "@emotion/css";
 
-// image
-import minus from "../../../assets/images/minus.svg";
-import plus from "../../../assets/images/plus.svg";
+// components
+import AccordionItem, { AccordionItemType } from "./AccordionItem";
 
 // styles
 import "./styles.css";
 
-type HTMLItem = {
-  type: "paragraph";
-  data: string;
-};
-
-export type AccordionItem = {
-  header: string;
-  question: string;
-  answer: HTMLItem[];
-};
-
 type AccordionPropType = {
   className?: string;
   defaultActive?: number;
-  items: AccordionItem[];
-};
-
-const renderHtml = (objectElement: HTMLItem) => {
-  const { type, data } = objectElement;
-  switch (type) {
-    default: // p
-      return <p>{data}</p>;
-  }
+  items: AccordionItemType[];
 };
 
 function Accordion(props: AccordionPropType) {
   const { className = "", items, defaultActive = -1 } = props;
 
-  const [activeItem, setActiveItem] = useState<number>(defaultActive);
+  const [activeItem, setActiveItem] = useState(defaultActive);
 
   const toggleItem = useCallback(
-    (newToActivate: number) =>
-      newToActivate === activeItem
-        ? setActiveItem(-1)
-        : setActiveItem(newToActivate),
-    [activeItem]
+    (question: string) =>
+      setActiveItem(items.findIndex((item) => item.question === question)),
+    [items]
   );
 
   const renderItems = useMemo(
     () =>
       items.map((item, i) => (
-        <Fragment key={item.question}>
-          <li className="item">
-            <hr className={i === 0 ? "ipad:opacity-0 ipad:mt-0" : ""} />
-            <div className="item-box">
-              <button
-                onClick={() => toggleItem(i)}
-                name={`${activeItem === i ? "reduce" : "expand"}`}
-                aria-label={`click to ${
-                  activeItem === i ? "reduce" : "expand"
-                } ${item.question}`}
-                className={activeItem === i ? "reduce" : "expand"}
-              >
-                <img
-                  src={activeItem === i ? minus : plus}
-                  alt="Minus symbol icon"
-                />
-              </button>
-              <h3>{item.header}</h3>
-              <div className="item-content">
-                <p>
-                  <b>{item.question}</b>
-                </p>
-                {item.answer.map((answerItem, i) => (
-                  <Fragment key={i}>{renderHtml(answerItem)}</Fragment>
-                ))}
-              </div>
-            </div>
-          </li>
-        </Fragment>
+        <AccordionItem
+          key={item.question}
+          defaultOpened={i === defaultActive}
+          onChange={toggleItem}
+          {...item}
+        />
       )),
-    [items, activeItem, toggleItem]
+    [items, defaultActive, toggleItem]
   );
 
   const gridRowsExpand = useMemo(
