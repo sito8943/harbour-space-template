@@ -3,7 +3,7 @@ import "./styles.css";
 
 function StickyBar() {
   return (
-    <div className="sticky-bar">
+    <footer className="sticky-bar">
       <div>
         <h4>Zeptolab</h4>
         <p>Marketing Performance</p>
@@ -28,7 +28,7 @@ function StickyBar() {
         <h4>Application closes in</h4>
         <p>6 Day : 22 Hrs : 56 Min</p>
       </div>
-    </div>
+    </footer>
   );
 }
 
