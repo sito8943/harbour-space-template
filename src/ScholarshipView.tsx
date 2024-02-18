@@ -1,4 +1,5 @@
-import { useQueryClient, useQuery } from "react-query";
+import { useQuery } from "@tanstack/react-query";
+import { useParams } from "react-router-dom";
 
 // utils
 import { ReactQueryKeys } from "utils";
@@ -7,30 +8,47 @@ import { ReactQueryKeys } from "utils";
 import { Navbar, SplashScreen, StickyBar } from "components";
 
 // sections
-import { About, Faqs, Hero, Testimonials } from "sections";
+import { About, Faqs, Hero, Testimonials, NotFound } from "sections";
 
 // providers
-import { ScholarshipProvider } from "providers";
+import { ScholarshipProvider, useHarbourSpaceApiClient } from "providers";
+import { ScholarshipRawData } from "providers/Scholarship/types";
 
 function ScholarshipView() {
-  // Access the client
-  const queryClient = useQueryClient();
+  const harbourSpaceClient = useHarbourSpaceApiClient();
+
+  const { slug } = useParams<{ slug: string }>();
 
   // Queries
-  const scholarshipQuery = useQuery(ReactQueryKeys.Scholarships, getTodos);
+  const { data, error, isLoading } = useQuery<ScholarshipRawData>({
+    queryKey: [ReactQueryKeys.Scholarships],
+    queryFn: () =>
+      harbourSpaceClient.scholarshipApiClient.getBySlug(slug ?? ""),
+    enabled: !!slug,
+  });
 
   return (
-    <ScholarshipProvider data={scholarshipQuery?.data}>
-      <SplashScreen />
-      <Navbar />
-      <main>
-        <Hero />
-        <About />
-        <Testimonials />
-        <Faqs />
-      </main>
-      <StickyBar />
-    </ScholarshipProvider>
+    <>
+      {!slug || !slug?.length ? (
+        <NotFound />
+      ) : (
+        <>
+          <SplashScreen isLoading={isLoading} error={error} />
+          {error === null && data ? (
+            <ScholarshipProvider data={data}>
+              <Navbar />
+              <main>
+                <Hero />
+                <About />
+                <Testimonials />
+                <Faqs />
+              </main>
+              <StickyBar />
+            </ScholarshipProvider>
+          ) : null}
+        </>
+      )}
+    </>
   );
 }
 
