@@ -1,2 +1,3 @@
 import { addMeta, removeMeta } from "./meta";
-export { addMeta, removeMeta };
+import { renderHtml, renderArrayOfHtml } from "./html";
+export { addMeta, removeMeta, renderHtml, renderArrayOfHtml };
