@@ -2,7 +2,10 @@ import { useCallback, useMemo, useState } from "react";
 import { css } from "@emotion/css";
 
 // components
-import AccordionItem, { AccordionItemType } from "./AccordionItem";
+import AccordionItem from "./AccordionItem";
+
+// utils
+import { Faq } from "utils";
 
 // styles
 import "./styles.css";
@@ -10,7 +13,7 @@ import "./styles.css";
 type AccordionPropType = {
   className?: string;
   defaultActive?: number;
-  items: AccordionItemType[];
+  items: Faq[];
 };
 
 function Accordion(props: AccordionPropType) {
