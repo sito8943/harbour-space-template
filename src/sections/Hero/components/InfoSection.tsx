@@ -1,8 +1,8 @@
 // components
-import Column from "../../../components/Column/Column";
+import Column from "components/Column/Column";
 
 // image
-import hand from "../../../assets/images/hand.png";
+import hand from "assets/images/hand.png";
 
 function InfoSection() {
   return (

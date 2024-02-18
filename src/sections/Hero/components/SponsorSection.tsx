@@ -1,10 +1,10 @@
 // images
-import zeptolab from "../../../assets/images/zeptolab.svg";
+import zeptolab from "assets/images/zeptolab.svg";
 
 // components
 import GridCard from "./GridCard";
-import Card from "../../../components/Card/Card";
-import Column from "../../../components/Column/Column";
+import Card from "components/Card/Card";
+import Column from "components/Column/Column";
 
 function SponsorSection() {
   return (
@@ -17,7 +17,9 @@ function SponsorSection() {
         </div>
       </div>
       <Card header="Application closes in" className="w-full">
-        <p className="text-2xl ipadPro:text-xl">6 Day : 22 Hrs : 56 Min : 13 Seg</p>
+        <p className="text-2xl ipadPro:text-xl">
+          6 Day : 22 Hrs : 56 Min : 13 Seg
+        </p>
       </Card>
       <GridCard />
     </Column>

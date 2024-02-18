@@ -2,8 +2,7 @@
 import rectangleVector from "../../assets/images/rectangle-vector.png";
 
 // components
-import InfoSection from "./components/InfoSection";
-import SponsorSection from "./components/SponsorSection";
+import { InfoSection, SponsorSection } from "./components";
 
 // styles
 import "./styles.css";
