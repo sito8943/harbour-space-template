@@ -3,8 +3,7 @@ import zeptolab from "assets/images/zeptolab.svg";
 
 // components
 import GridCard from "./GridCard";
-import Card from "components/Card/Card";
-import Column from "components/Column/Column";
+import { Card, Column } from "components";
 
 function SponsorSection() {
   return (
