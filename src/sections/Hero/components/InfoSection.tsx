@@ -1,5 +1,5 @@
 // components
-import Column from "components/Column/Column";
+import { Column } from "components";
 
 // image
 import hand from "assets/images/hand.png";
