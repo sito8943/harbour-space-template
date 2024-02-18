@@ -16,7 +16,7 @@ function SplashScreen(props: SplashScreenPropType) {
 
   return (
     <div
-      className={`w-full h-screen flex items-center justify-center bg-white transition ${!isLoading ? "opacity-0 pointer-events-none" : "opacity-100"}`}
+      className={`fixed top-0 left-0 w-full h-screen flex items-center justify-center bg-white transition duration-300 ${!isLoading ? "opacity-0 pointer-events-none" : "opacity-100"}`}
     >
       <img
         className={`w-80 h-80 blink`}
