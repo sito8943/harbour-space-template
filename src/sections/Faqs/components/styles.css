@@ -14,8 +14,8 @@
 }
 
 .accordion .item {
-  min-height: 140px;
-  @apply overflow-hidden min-h-[140px] ipadPro:min-h-[130px] ipad:min-h-[95px];
+  min-height: 150px;
+  @apply overflow-hidden min-h-[147px] ipadPro:min-h-[137px] ipad:min-h-[105px];
 }
 
 .accordion .item-box {
@@ -24,7 +24,7 @@
 
 .accordion .item-content {
   width: 50%;
-  @apply pt-1 pr-4 flex flex-col gap-5 ipad:pr-0 ipad:w-full;
+  @apply pt-1 pr-4 flex flex-col gap-5 ipad:pr-0 ipad:w-[80%];
 }
 
 .accordion button {
