@@ -6,9 +6,11 @@ import { useScholarship } from "providers";
 // utils
 import { parseDate } from "utils";
 
+// components
+import { Countdown } from "components";
+
 // styles
 import "./styles.css";
-import { countdown } from "utils/functions/date";
 
 function StickyBar() {
   const { scholarship } = useScholarship();
@@ -19,28 +21,6 @@ function StickyBar() {
       new Date(scholarship.application_end_date).getTime(),
     [scholarship]
   );
-
-  const [timeLeft, setTimeLeft] = useState(countdown(difference));
-
-  useEffect(() => {
-    if (
-      timeLeft.days <= 0 &&
-      timeLeft.hours <= 0 &&
-      timeLeft.minutes <= 0 &&
-      timeLeft.seconds <= 0
-    ) {
-      // Update the countdown every second
-      const timer = setTimeout(() => {
-        setTimeLeft(countdown(difference - new Date().getTime()));
-      }, 1000);
-
-      // Clear the timer when the component unmounts or the end date is reached
-      return () => clearTimeout(timer);
-    }
-  }, [timeLeft]);
-
-  // Format the time left for display
-  const formatTime = (time: number) => (time < 10 ? `0${time}` : time);
 
   return (
     <footer className="sticky-bar">
@@ -66,9 +46,7 @@ function StickyBar() {
       </div>
       <div>
         <h4>Application closes in</h4>
-        <p>
-          {`${timeLeft.days} Day : ${formatTime(timeLeft.hours)} Hrs : ${formatTime(timeLeft.minutes)} Min : ${formatTime(timeLeft.seconds)} Seg`}
-        </p>
+        <Countdown start={difference} />
       </div>
     </footer>
   );
