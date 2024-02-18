@@ -5,22 +5,16 @@ import minus from "assets/images/minus.svg";
 import plus from "assets/images/plus.svg";
 
 // types
-import { HtmlItem } from "utils";
+import { Faq, HtmlItem } from "utils";
 
-export type AccordionItemType = {
-  header: string;
-  question: string;
-  answer: HtmlItem[];
-};
-
-type AccordionItemPropType = AccordionItemType & {
+type AccordionItemPropType = Faq & {
   firstItem?: boolean;
   defaultOpened?: boolean;
   onChange?: (question: string) => void;
 };
 
 function AccordionItem(prop: AccordionItemPropType) {
-  const { firstItem, defaultOpened, onChange, header, question, answer } = prop;
+  const { firstItem, defaultOpened, onChange, type, question, answer } = prop;
 
   const [active, setActive] = useState(defaultOpened);
 
@@ -48,7 +42,7 @@ function AccordionItem(prop: AccordionItemPropType) {
           >
             <img src={active ? minus : plus} alt="Minus symbol icon" />
           </button>
-          <h3>{header}</h3>
+          <h3>{type}</h3>
           <div className="item-content">
             <p>
               <b>{question}</b>
@@ -66,7 +60,7 @@ function AccordionItem(prop: AccordionItemPropType) {
 const AccordionItemMemo = memo(
   (prop: AccordionItemPropType) => <AccordionItem {...prop} />,
   (oldProps, newProps) =>
-    oldProps.header === newProps.header &&
+    oldProps.type === newProps.type &&
     oldProps.question === newProps.question &&
     oldProps.answer === newProps.answer &&
     oldProps.firstItem === newProps.firstItem &&
