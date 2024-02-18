@@ -1,0 +1,44 @@
+{
+  "env": { "browser": true, "es2020": true },
+  "extends": [
+      "eslint:recommended",
+      "plugin:react-hooks/recommended",
+      "react-app",
+      "react-app/jest",
+      "plugin:@typescript-eslint/recommended",
+      "prettier",
+      "plugin:prettier/recommended",
+      "plugin:jsdoc/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": { "ecmaVersion": "latest", "sourceType": "module" },
+  "plugins": ["react-refresh", "jsdoc"],
+  "rules": {
+      "prettier/prettier": "warn",
+      "@typescript-eslint/no-explicit-any": "off",
+      "no-console": "warn",
+      "prefer-const": "warn",
+      "jsdoc/require-param-type": 0,
+      "jsdoc/require-returns-type": 0,
+      "jsdoc/require-jsdoc": [
+          1,
+          {
+              "publicOnly": true,
+              "require": {
+                  "ArrowFunctionExpression": true,
+                  "FunctionDeclaration": true,
+                  "FunctionExpression": true,
+                  "ClassDeclaration": true,
+                  "ClassExpression": true,
+                  "MethodDefinition": true
+              }
+          }
+      ]
+  },
+  "settings": {
+      "jsdoc": {
+          "ignoreInternal": true,
+          "ignorePrivate": true
+      }
+  }
+}
