@@ -1,3 +1,8 @@
+import { useQueryClient, useQuery } from "react-query";
+
+// utils
+import { ReactQueryKeys } from "utils";
+
 // components
 import { Navbar, SplashScreen, StickyBar } from "./components";
 
@@ -8,6 +13,12 @@ import { About, Faqs, Hero, Testimonials } from "./sections";
 import { ScholarshipProvider } from "./providers";
 
 function ScholarshipView() {
+  // Access the client
+  const queryClient = useQueryClient();
+
+  // Queries
+  const scholarshipQuery = useQuery(ReactQueryKeys.Scholarships, getTodos);
+
   return (
     <ScholarshipProvider data={scholarshipQuery?.data}>
       <SplashScreen />
