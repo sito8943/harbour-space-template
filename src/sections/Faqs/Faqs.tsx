@@ -64,14 +64,14 @@ function Faqs() {
   );
 
   return (
-    <section id="faqs" className="section w-full flex flex-col mb-20 ipadPro:mb-40 mobile:px-7">
+    <section id="faqs" className="section w-full flex flex-col mb-20 ipadPro:mb-0 mobile:px-7">
       <div className="mb-10 ipad:mb-0 w-full flex items-center justify-between ipadPro:flex-col ipadPro:items-start ipadPro:justify-start ipadPro:gap-10">
         <h2>
           Frequently asked <br /> questions
         </h2>
         <div className="flex items-center gap-10 ipadPro:w-full mobile:gap-2 mobile:items-start mobile:flex-col">
           <p>Filter by:</p>
-          <div className="ipadPro:flex-1">
+          <div className="ipadPro:w-full">
             <div className="flex items-center justify-between gap-2 border rounded-[100px] py-3 px-5">
               <p className="text-primary font-semibold ipadPro:text-lg">
                 {filters[filterBy]}

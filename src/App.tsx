@@ -12,13 +12,13 @@ function App() {
   return (
     <>
       <Navbar />
-      <StickyBar />
       <main>
         <Hero />
         <About />
         <Testimonials />
         <Faqs />
       </main>
+      <StickyBar />
     </>
   );
 }
