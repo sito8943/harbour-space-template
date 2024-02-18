@@ -9,7 +9,7 @@ import { ScholarshipProviderData, ScholarshipProviderProps } from "./types";
 const ScholarshipContext = createContext({} as ScholarshipProviderData);
 
 const ScholarshipProvider = (props: ScholarshipProviderProps) => {
-  const { data } = props;
+  const { data, children } = props;
   const { meta, og_meta } = data;
   const { id, testimonials, scholarship } = data;
   const { items, categories } = scholarship.faqs;
@@ -45,7 +45,9 @@ const ScholarshipProvider = (props: ScholarshipProviderProps) => {
         faqs: items,
         faqTypes: categories,
       }}
-    ></ScholarshipContext.Provider>
+    >
+      {children}
+    </ScholarshipContext.Provider>
   );
 };
 
