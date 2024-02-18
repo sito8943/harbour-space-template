@@ -10,6 +10,8 @@ export default defineConfig({
       assets: path.resolve(__dirname, "./src/assets"),
       components: path.resolve(__dirname, "./src/components"),
       utils: path.resolve(__dirname, "./src/utils"),
+      sections: path.resolve(__dirname, "./src/sections"),
+      providers: path.resolve(__dirname, "./src/providers"),
     },
   },
   server: {
