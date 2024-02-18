@@ -4,13 +4,13 @@ import { useQueryClient, useQuery } from "react-query";
 import { ReactQueryKeys } from "utils";
 
 // components
-import { Navbar, SplashScreen, StickyBar } from "./components";
+import { Navbar, SplashScreen, StickyBar } from "components";
 
 // sections
-import { About, Faqs, Hero, Testimonials } from "./sections";
+import { About, Faqs, Hero, Testimonials } from "sections";
 
 // providers
-import { ScholarshipProvider } from "./providers";
+import { ScholarshipProvider } from "providers";
 
 function ScholarshipView() {
   // Access the client
