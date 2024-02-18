@@ -4,10 +4,10 @@ import { useMemo, useState } from "react";
 import chevronDown from "../../assets/images/chevron-down.svg";
 
 // components
-import Accordion, { AccordionItem } from "./components/Accordion";
+import { Accordion, AccordionItemType } from "./components";
 
 const filters = ["Program conditions"];
-const faqs: AccordionItem[] = [
+const faqs: AccordionItemType[] = [
   {
     header: "Program conditions",
     question: "What are my obligations?",
@@ -64,7 +64,10 @@ function Faqs() {
   );
 
   return (
-    <section id="faqs" className="section w-full flex flex-col mb-20 ipadPro:mb-0 mobile:px-7">
+    <section
+      id="faqs"
+      className="section w-full flex flex-col mb-20 ipadPro:mb-0 mobile:px-7"
+    >
       <div className="mb-10 ipad:mb-0 w-full flex items-center justify-between ipadPro:flex-col ipadPro:items-start ipadPro:justify-start ipadPro:gap-10">
         <h2>
           Frequently asked <br /> questions

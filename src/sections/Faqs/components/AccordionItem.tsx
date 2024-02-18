@@ -1,11 +1,11 @@
 import { Fragment, memo, useState } from "react";
 
 // image
-import minus from "../../../assets/images/minus.svg";
-import plus from "../../../assets/images/plus.svg";
+import minus from "assets/images/minus.svg";
+import plus from "assets/images/plus.svg";
 
 // types
-import { HtmlItem } from "../../../utils/models/HtmlItem";
+import { HtmlItem } from "utils";
 
 export type AccordionItemType = {
   header: string;
