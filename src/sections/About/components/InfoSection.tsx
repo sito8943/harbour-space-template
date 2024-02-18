@@ -5,7 +5,13 @@ import circleVectors from "assets/images/circle-vectors.jpg";
 // components
 import { Column } from "components";
 
+// providers
+import { useScholarship } from "providers";
+import { renderArrayOfHtml } from "utils";
+
 function InfoSection() {
+  const { scholarship } = useScholarship();
+
   return (
     <div className="flex items-center justify-center gap-[120px] mt-20 desktop:gap-20 ipadPro:flex-col ipadPro:gap-10">
       <div className="relative flex items-center justify-center ipadPro:-mb-[51%]">
@@ -25,12 +31,7 @@ function InfoSection() {
           <h2 className="ipadPro:mt-[60px]">
             About the <br /> apprenticeship
           </h2>
-          <p>
-            Our scholarships are designed to give talented and driven young
-            people from any background access to top-class education, experience
-            and network. We offer a fully-funded master's degree alongside an
-            apprenticeship and a guaranteed job upon graduation.{" "}
-          </p>
+          {renderArrayOfHtml(scholarship.about)}
         </Column>
       </div>
     </div>
