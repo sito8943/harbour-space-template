@@ -3,7 +3,7 @@ import about from "assets/images/about.jpg";
 import circleVectors from "assets/images/circle-vectors.jpg";
 
 // components
-import Column from "components/Column/Column";
+import { Column } from "components";
 
 function InfoSection() {
   return (
