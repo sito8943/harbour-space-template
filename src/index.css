@@ -30,7 +30,7 @@ hr,
 }
 
 h2 {
-  @apply font-semibold text-primary text-5xl leading-[56px] ipadPro:text-4xl ipadPro:leading-10;
+  @apply font-semibold text-primary text-5xl leading-[56px] desktop:text-4xl ipadPro:text-3xl ipadPro:leading-10;
 }
 
 .center-vertical {
