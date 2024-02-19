@@ -12,6 +12,7 @@ export default defineConfig({
       utils: path.resolve(__dirname, "./src/utils"),
       sections: path.resolve(__dirname, "./src/sections"),
       providers: path.resolve(__dirname, "./src/providers"),
+      views: path.resolve(__dirname, "./src/views"),
     },
   },
   server: {
