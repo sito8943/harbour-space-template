@@ -36,3 +36,45 @@
   font-size: 16px;
   line-height: 24px;
 }
+
+@media (max-width: 834px) {
+  .slider-item .top {
+    @apply p-8;
+  }
+
+  .slider-item .bottom {
+    @apply px-10 py-8;
+  }
+
+  .slider-item {
+    width: 700px;
+    min-width: 700px;
+  }
+
+  .slider-item .bottom-content {
+    font-size: 24px;
+    line-height: 29px;
+  }
+}
+
+@media (max-width: 768px) {
+  .slider-item .top {
+    @apply p-7;
+  }
+
+  .slider-item .bottom {
+    @apply p-7;
+  }
+
+  .slider-item {
+    width: 375px;
+    min-width: 375px;
+  }
+}
+
+@media (max-width: 375px) {
+  .slider-item {
+    width: 335px;
+    min-width: 335px;
+  }
+}
