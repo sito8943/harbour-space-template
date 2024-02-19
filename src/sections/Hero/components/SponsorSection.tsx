@@ -30,9 +30,7 @@ function SponsorSection() {
         </div>
       </div>
       <Card header="Application closes in" className="w-full">
-        <p className="text-2xl ipadPro:text-xl">
-          <Countdown start={difference} />
-        </p>
+        <Countdown start={difference} className="text-2xl ipadPro:text-xl"/>
       </Card>
       <GridCard />
     </Column>
