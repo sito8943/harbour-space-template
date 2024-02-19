@@ -33,7 +33,7 @@ function Menu(props: MenuPropType) {
                 onChange(i);
               }}
               name={`${filter.toLowerCase()}`}
-              className={`text-gray font-semibold text-lg ${i === 0 ? "mt-2" : ""}`}
+              className="text-gray font-semibold text-lg"
               aria-label={`filter by ${filter.toLowerCase()}`}
             >
               {filter}
@@ -67,7 +67,22 @@ function Menu(props: MenuPropType) {
           />
         </div>
       </button>
-      <div className="overflow-hidden">{renderItems}</div>
+      <div className="overflow-hidden">
+        <li className="flex items-center justify-between gap-2 py-3 ">
+          <button
+            onClick={() => {
+              setOpened(false);
+              onChange(-1);
+            }}
+            name="all"
+            className="text-gray font-semibold text-lg mt-2"
+            aria-label="show all"
+          >
+            All
+          </button>
+        </li>
+        {renderItems}
+      </div>
     </div>
   );
 }
