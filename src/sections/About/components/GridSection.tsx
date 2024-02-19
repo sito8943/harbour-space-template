@@ -1,5 +1,5 @@
 // components
-import Card from "components/Card/Card";
+import { Card } from "components";
 
 // providers
 import { useScholarship } from "providers";

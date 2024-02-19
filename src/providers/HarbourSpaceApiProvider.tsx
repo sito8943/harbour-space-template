@@ -1,5 +1,5 @@
 import { ReactNode, createContext, useContext } from "react";
-import { HarbourSpaceApiClient } from "utils/api/clients/HarbourSpaceApiClient";
+import { HarbourSpaceApiClient } from "utils";
 
 /** KatanaApiClientContextProps */
 export interface HarbourSpaceApiClientContextProps {
