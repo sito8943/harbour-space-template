@@ -34,7 +34,7 @@ function ScholarshipView() {
       ) : (
         <>
           <SplashScreen isLoading={isLoading} error={error} />
-          {error === null && data ? (
+          {error === null && data && (
             <ScholarshipProvider data={data}>
               <Navbar />
               <main>
@@ -45,7 +45,7 @@ function ScholarshipView() {
               </main>
               <StickyBar />
             </ScholarshipProvider>
-          ) : null}
+          )}
         </>
       )}
     </>
