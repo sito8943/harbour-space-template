@@ -1,4 +1,4 @@
-import Accordion from "./Accordion";
-import AccordionItem from "./AccordionItem";
-
-export { Accordion, AccordionItem };
+import Accordion from "./Accordion/Accordion";
+import AccordionItem from "./Accordion/AccordionItem";
+import Menu from "./Menu/Menu";
+export { Menu, Accordion, AccordionItem };
