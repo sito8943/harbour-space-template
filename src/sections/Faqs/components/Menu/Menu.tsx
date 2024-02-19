@@ -6,6 +6,7 @@ import chevronDown from "assets/images/chevron-down.svg";
 
 // styles
 import "./styles.css";
+import MenuItem from "./MenuItem";
 
 type MenuPropType = {
   items: string[];
@@ -23,22 +24,14 @@ function Menu(props: MenuPropType) {
       items
         .filter((_, i) => i !== selected)
         .map((filter, i) => (
-          <li
+          <MenuItem
             key={filter}
-            className="flex items-center justify-between gap-2 py-3 "
-          >
-            <button
-              onClick={() => {
-                setOpened(false);
-                onChange(i);
-              }}
-              name={`${filter.toLowerCase()}`}
-              className="text-gray font-semibold text-lg"
-              aria-label={`filter by ${filter.toLowerCase()}`}
-            >
-              {filter}
-            </button>
-          </li>
+            text={filter}
+            onClick={() => {
+              setOpened(false);
+              onChange(i);
+            }}
+          />
         )),
     [selected, items]
   );
@@ -50,7 +43,7 @@ function Menu(props: MenuPropType) {
 
   return (
     <div
-      className={`menu grid bg-white ${gridTemplateRowsCSS} border ${opened ? "rounded-[40px]" : "rounded-[100px]"} py-3 px-5 ipadPro:w-full `}
+      className={`menu grid bg-white ${gridTemplateRowsCSS} border rounded-[40px] py-3 px-5 ipadPro:w-full `}
     >
       <button
         name="filter-menu"
@@ -58,7 +51,9 @@ function Menu(props: MenuPropType) {
         aria-label="click to open filter menu"
         className="flex items-center justify-between gap-2 ipadPro:w-full"
       >
-        <p className="text-primary font-semibold text-lg">{items[selected]}</p>
+        <p className="text-primary font-semibold text-lg">
+          {selected === -1 ? "All" : items[selected]}
+        </p>
         <div className="w-[30px] h-[30px] flex items-center justify-center">
           <img
             className={`w-4 h-4 ipadPro:w-3 ipadPro:h-3 ${opened ? "rotate-180" : "rotate-0"}`}
@@ -68,19 +63,15 @@ function Menu(props: MenuPropType) {
         </div>
       </button>
       <div className="overflow-hidden">
-        <li className="flex items-center justify-between gap-2 py-3 ">
-          <button
+        {selected !== -1 && (
+          <MenuItem
+            text="All"
             onClick={() => {
               setOpened(false);
               onChange(-1);
             }}
-            name="all"
-            className="text-gray font-semibold text-lg mt-2"
-            aria-label="show all"
-          >
-            All
-          </button>
-        </li>
+          />
+        )}
         {renderItems}
       </div>
     </div>
