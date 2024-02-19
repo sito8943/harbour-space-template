@@ -46,13 +46,13 @@ function Faqs() {
         <h2>
           Frequently asked <br /> questions
         </h2>
-        <div className="flex items-center gap-10 ipadPro:w-full mobile:gap-2 mobile:items-start mobile:flex-col">
-          <p>Filter by:</p>
+        <div className="flex items-center gap-10 ipadPro:w-full ipad:flex-col ipad:items-start mobile:gap-2 ">
+          <p className="w-[100px]">Filter by:</p>
           <div className="ipadPro:w-full">
             <button
               name="filter-menu"
               aria-label="click to open filter menu"
-              className="flex items-center justify-between gap-2 border rounded-[100px] py-3 px-5"
+              className="flex items-center justify-between gap-2 border rounded-[100px] py-3 px-5 ipadPro:w-full"
             >
               <p className="text-primary font-semibold ipadPro:text-lg">
                 {faqTypes[filterBy]}
