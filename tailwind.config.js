@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-export default {
+const tailwindConfig = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {},
@@ -15,6 +15,7 @@ export default {
     },
     colors: {
       white: "#ffffff",
+      light: "#fbfbfb",
       gray: "#535353",
       primary: "#685dc5",
       secondary: "#4fa16c",
@@ -22,3 +23,5 @@ export default {
   },
   plugins: [],
 };
+
+export default tailwindConfig;
