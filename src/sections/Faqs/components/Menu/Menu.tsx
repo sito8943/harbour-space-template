@@ -50,7 +50,7 @@ function Menu(props: MenuPropType) {
 
   return (
     <div
-      className={`menu ipadPro:w-full grid relative ${gridTemplateRowsCSS} border ${opened ? "rounded-[40px]" : "rounded-[100px]"} py-3 px-5`}
+      className={`menu grid bg-white ${gridTemplateRowsCSS} border ${opened ? "rounded-[40px]" : "rounded-[100px]"} py-3 px-5 ipadPro:w-full `}
     >
       <button
         name="filter-menu"
