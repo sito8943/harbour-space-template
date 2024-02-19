@@ -1,5 +1,5 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
 import ReactDOM from "react-dom/client";
 
 // utils
@@ -9,7 +9,7 @@ import { HarbourSpaceApiClient } from "utils";
 import { HarbourSpaceApiClientProvider } from "providers";
 
 // views
-import ScholarshipView from "./ScholarshipView";
+import { Home, ScholarshipView } from "views";
 
 // styles
 import "./index.css";
@@ -23,7 +23,10 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     <HarbourSpaceApiClientProvider client={harbourSpaceClient}>
       <BrowserRouter>
         <Routes>
-          <Route path="/:slug" element={<ScholarshipView />} />
+          <Route path="/" element={<Outlet />}>
+            <Route index element={<Home />} />
+            <Route path="/:slug" element={<ScholarshipView />} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </HarbourSpaceApiClientProvider>
