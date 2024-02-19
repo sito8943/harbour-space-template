@@ -1,5 +1,5 @@
 // images
-import rectangleVector from "../../assets/images/rectangle-vector.png";
+import rectangleVector from "../../assets/images/rectangle-vector.svg";
 
 // components
 import { InfoSection, SponsorSection } from "./components";
