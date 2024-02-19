@@ -17,7 +17,7 @@ function GridSection() {
           €{scholarship.total_value.toLocaleString()}
         </p>
         <hr className="divider my-[55px] ipadPro:hidden" />
-        <div className="flex flex-wrap gap-10 mt-5 desktop:gap-2 ipadPro:mt-10">
+        <div className="flex flex-wrap gap-10 mt-5 desktop:gap-5 ipadPro:mt-10">
           <div>
             <h3>Tuition covered</h3>
             <p className="text-base ipadPro:text-2xl">
