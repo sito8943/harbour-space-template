@@ -25,8 +25,8 @@ function Faqs() {
         <h2>
           Frequently asked <br /> questions
         </h2>
-        <div className="flex items-center gap-10 ipadPro:w-full ipad:flex-col ipad:items-start mobile:gap-2 ">
-          <p className="w-[100px]">Filter by:</p>
+        <div className="flex items-start gap-10 ipadPro:w-full ipad:flex-col mobile:gap-2 ">
+          <p className="w-[100px] mt-4">Filter by:</p>
           <Menu
             selected={filterBy}
             onChange={(active: number) => setFilterBy(active)}
