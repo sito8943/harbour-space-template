@@ -5,10 +5,11 @@ import { countdown } from "utils";
 
 type CountdownPropType = {
   start: number;
+  className?: string;
 };
 
 function Countdown(props: CountdownPropType) {
-  const { start } = props;
+  const { start, className = "" } = props;
 
   const [timeLeft, setTimeLeft] = useState(countdown(start));
 
@@ -33,7 +34,7 @@ function Countdown(props: CountdownPropType) {
   const formatTime = (time: number) => (time < 10 ? `0${time}` : time);
 
   return (
-    <p>
+    <p className={className}>
       {`${timeLeft.days} Day : ${formatTime(timeLeft.hours)} Hrs : ${formatTime(timeLeft.minutes)} Min : ${formatTime(timeLeft.seconds)} Seg`}
     </p>
   );
