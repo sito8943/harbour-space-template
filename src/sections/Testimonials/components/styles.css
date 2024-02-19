@@ -1,0 +1,38 @@
+.slider-item {
+  width: 800px;
+  min-width: 800px;
+}
+
+.slider-item .top {
+  border-bottom: none;
+  @apply flex justify-between items-center bg-white p-10 rounded-t-md;
+}
+
+.slider-item .bottom {
+  border-top: none;
+  @apply flex flex-col gap-10 bg-light px-20 pt-10 pb-20 rounded-b-md;
+}
+
+.slider-item .bottom-content {
+  font-size: 26px;
+  line-height: 35px;
+}
+
+.slider-item .bottom-extra {
+  @apply flex gap-3;
+}
+
+.slider-item .person {
+  @apply flex gap-5 items-center;
+}
+
+.slider-item .person h4 {
+  @apply font-semibold text-gray;
+}
+
+.slider-item .bottom-extra p,
+.slider-item .person h4,
+.slider-item .person p {
+  font-size: 16px;
+  line-height: 24px;
+}
