@@ -36,7 +36,7 @@ function AccordionItem(prop: AccordionItemPropType) {
           </button>
           <h3>{type}</h3>
           <div className="item-content">
-            <p>
+            <p className="mb-5">
               <b>{question}</b>
             </p>
             {renderArrayOfHtml(answer)}
