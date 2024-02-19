@@ -14,7 +14,7 @@ function Hero() {
       <SponsorSection />
       <img
         src={rectangleVector}
-        className="card-borders w-[600px] h-[257px] object-cover absolute right-0 bottom-10 desktop:hidden"
+        className="image-borders w-[600px] h-[257px] object-cover absolute right-0 bottom-10 desktop:hidden"
         alt="A set of vectors arranged in a rectangle pattern."
       />
     </section>

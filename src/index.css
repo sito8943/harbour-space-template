@@ -6,6 +6,10 @@ body {
   overflow-x: hidden;
 }
 
+.image-borders {
+  border: 1px solid #dadadab6;
+}
+
 p {
   font-size: 22px;
   line-height: 32px;
