@@ -27,7 +27,7 @@ function SliderItem(props: SliderItemProp) {
           </div>
         </div>
         <div>
-          <a href="www.linkedin.com" target="_blank" rel="noreferrer">
+          <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">
             <img src={linkedin} alt="linkedin's logo" />
           </a>
         </div>
