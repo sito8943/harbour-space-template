@@ -8,7 +8,7 @@ function GridSection() {
   const { scholarship } = useScholarship();
 
   return (
-    <div className="grid-section gap-10 w-full my-20 ipadPro:px-10 ipad:px-5 mobile:px-3">
+    <div className="grid-section gap-10 w-full my-20 ipadPro:mt-40 ipad:mt-[300px] ipadPro:px-10 ipad:px-5 mobile:px-3">
       <Card
         className="scholarship-value about-card h-full flex flex-col ipadPro:border-none"
         header="Scholarship Value"
