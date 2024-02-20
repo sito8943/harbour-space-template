@@ -26,4 +26,8 @@ Because this example is about to make a View to load a Scholarship so the Home p
 - tailwindcss for css
 - vite for development
 
+**IMPORTANT**
+
+As the api call doesn't return any testimonial, the app will render 4 card templates of the slider only to show the micro interaction
+
 **Author: Carlos Andrés Mora González**
