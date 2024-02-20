@@ -17,8 +17,16 @@
   --main-color: #6761c0;
   --secondary-color: #8c899b;
 
-  transition: grid-template-rows 600ms ease-in;
   @apply w-full grid;
+}
+
+.accordion-open-animation {
+  transition: grid-template-rows 2060ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition-delay: 1300ms;
+}
+
+.accordion-close-animation {
+  transition: grid-template-rows 500ms ease-in;
 }
 
 .btn-element {
