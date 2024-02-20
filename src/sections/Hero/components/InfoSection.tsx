@@ -20,7 +20,7 @@ function InfoSection() {
           <h2>{scholarship.name}</h2>
           <img
             src={hand}
-            className="absolute -top-[100px] -right-[100px] ipad:w-[200px] ipad:h-[200px] ipad:-top-[110px] ipad:-right-[70px]"
+            className="absolute -top-[100px] -right-[100px] ipad:w-[200px] ipad:h-[200px] ipad:-top-[110px] ipad:-right-[70px] mobile:-right-[15px]"
             alt="Image of a circle composed of texts arranged in a circular shape, with a hand in the center touching a series of rhombus-shaped vectors."
           />
         </div>
