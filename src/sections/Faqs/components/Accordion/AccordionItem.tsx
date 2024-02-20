@@ -1,30 +1,19 @@
-import { memo, useState, useRef } from "react";
-
-// image
-import minus from "assets/images/minus.svg";
-import plus from "assets/images/plus.svg";
+import { memo, useState } from "react";
 
 // types
 import { Faq, renderArrayOfHtml } from "utils";
+
+// components
 import AccordionItemButton from "./AccordionItemButton";
 
 type AccordionItemPropType = Faq & {
   firstItem?: boolean;
-  defaultOpened?: boolean;
+  active: boolean;
   onChange?: (question: string) => void;
 };
 
 function AccordionItem(prop: AccordionItemPropType) {
-  const {
-    firstItem,
-    defaultOpened = false,
-    onChange,
-    type,
-    question,
-    answer,
-  } = prop;
-
-  const [active, setActive] = useState(defaultOpened);
+  const { firstItem, active, onChange, type, question, answer } = prop;
 
   return (
     <>
@@ -33,10 +22,7 @@ function AccordionItem(prop: AccordionItemPropType) {
         <div className="item-box">
           <AccordionItemButton
             opened={active}
-            onClick={() => {
-              setActive((active) => !active);
-              onChange && onChange(active ? "" : question);
-            }}
+            onClick={() => onChange && onChange(active ? "" : question)}
             name={`${active ? "reduce" : "expand"}`}
             aria-label={`click to ${active ? "reduce" : "expand"} ${question}`}
           />
@@ -55,13 +41,16 @@ function AccordionItem(prop: AccordionItemPropType) {
 
 const AccordionItemMemo = memo(
   (prop: AccordionItemPropType) => <AccordionItem {...prop} />,
-  (oldProps, newProps) =>
-    oldProps.type === newProps.type &&
-    oldProps.question === newProps.question &&
-    oldProps.answer === newProps.answer &&
-    oldProps.firstItem === newProps.firstItem &&
-    oldProps.defaultOpened === newProps.defaultOpened &&
-    oldProps.onChange === newProps.onChange
+  (oldProps, newProps) => {
+    return (
+      oldProps.active === newProps.active &&
+      oldProps.type === newProps.type &&
+      oldProps.question === newProps.question &&
+      oldProps.answer === newProps.answer &&
+      oldProps.firstItem === newProps.firstItem &&
+      oldProps.onChange === newProps.onChange
+    );
+  }
 );
 AccordionItemMemo.displayName = "AccordionItem";
 
