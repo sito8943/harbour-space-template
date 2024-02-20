@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, useEffect, useRef } from "react";
+import { ButtonHTMLAttributes, useEffect, useRef, useState } from "react";
 
 const OUTLINE_OFF_COLOR = "#dadada";
 const OUTLINE_ON_COLOR = "#6761c0";
@@ -14,6 +14,7 @@ const switchClasses = (
 
 type AccordionItemButton = ButtonHTMLAttributes<HTMLButtonElement> & {
   opened: Boolean;
+  onClick: () => void;
 };
 
 function AccordionItemButton(props: AccordionItemButton) {
@@ -35,8 +36,6 @@ function AccordionItemButton(props: AccordionItemButton) {
   }
 
   const openBtn = () => {
-    // set new button state
-    // btnState = "open";
     // disabling the button until the animation finish
     if (btn.current !== null) btn.current.disabled = true;
 
@@ -100,7 +99,6 @@ function AccordionItemButton(props: AccordionItemButton) {
   };
 
   const closeBtn = () => {
-    // btnState = "closed";
     // disabling the button until the animation finish
     if (btn.current !== null) btn.current.disabled = true;
 
