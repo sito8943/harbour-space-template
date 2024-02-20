@@ -8,6 +8,7 @@
 }
 
 .slider-content {
+  transition: transform 2060ms cubic-bezier(0.075, 0.82, 0.165, 1);
   @apply z-10 flex items-center justify-center w-[100vw] gap-10 ipadPro:gap-9 ipad:gap-6 mobile:gap-5;
 }
 
@@ -18,7 +19,7 @@
 }
 
 .slider-navigation {
-  @apply z-10 flex items-center justify-end gap-4 ipadPro:mt-5 w-[90%];
+  @apply z-10 flex items-center ipadPro:justify-end gap-4 ipadPro:mt-5 w-[90%];
 }
 
 .slider-nav-button {
@@ -96,7 +97,8 @@
 
 @media (max-width: 375px) {
   .slider-item {
-    width: 335px;
-    min-width: 335px;
+    margin-top: 40px;
+    width: 330px;
+    min-width: 330px;
   }
 }
