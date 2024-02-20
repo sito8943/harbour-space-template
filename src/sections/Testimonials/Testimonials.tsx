@@ -22,6 +22,8 @@ function Testimonials() {
         <div
           className={`image-borders w-[80%] h-[395px] ipadPro:w-full ipadPro:border-none ${css(
             {
+              backgroundSize: "contain",
+              backgroundRepeat: "no-repeat",
               backgroundImage: `url(${rectangleVector})`,
               "@media (max-width: 834px)": {
                 backgroundImage: `url(${primaryRectangleVector})`,
