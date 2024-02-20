@@ -32,12 +32,12 @@ function Accordion(props: AccordionPropType) {
       items.map((item, i) => (
         <AccordionItem
           key={item.question}
-          defaultOpened={i === defaultActive}
+          active={activeItem === i}
           onChange={toggleItem}
           {...item}
         />
       )),
-    [items, defaultActive, toggleItem]
+    [activeItem, items, defaultActive, toggleItem]
   );
 
   const gridRowsExpand = useMemo(
@@ -51,7 +51,9 @@ function Accordion(props: AccordionPropType) {
   );
 
   return (
-    <ul className={`accordion ${className} ${gridRowsExpand}`}>
+    <ul
+      className={`accordion ${activeItem !== -1 ? "accordion-open-animation" : "accordion-close-animation"} ${className} ${gridRowsExpand}`}
+    >
       {renderItems}
       <hr />
     </ul>
