@@ -11,8 +11,11 @@ import { Navbar, SplashScreen, StickyBar } from "components";
 import { About, Faqs, Hero, Testimonials, NotFound } from "sections";
 
 // providers
-import { ScholarshipProvider, useHarbourSpaceApiClient } from "providers";
-import { ScholarshipRawData } from "providers/Scholarship/types";
+import {
+  ScholarshipProvider,
+  useHarbourSpaceApiClient,
+  ScholarshipRawData,
+} from "providers";
 
 function ScholarshipView() {
   const harbourSpaceClient = useHarbourSpaceApiClient();
