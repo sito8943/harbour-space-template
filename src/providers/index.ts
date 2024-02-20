@@ -6,6 +6,7 @@ import {
   HarbourSpaceApiClientProvider,
   useHarbourSpaceApiClient,
 } from "./HarbourSpaceApiProvider";
+import { ScholarshipRawData } from "./Scholarship/types";
 
 export {
   ScholarshipProvider,
@@ -13,3 +14,5 @@ export {
   HarbourSpaceApiClientProvider,
   useHarbourSpaceApiClient,
 };
+
+export type { ScholarshipRawData };
