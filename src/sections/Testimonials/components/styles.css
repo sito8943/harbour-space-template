@@ -1,6 +1,28 @@
+.slider {
+  @apply flex flex-col relative mt-10;
+}
+
 .slider-item {
   width: 800px;
   min-width: 800px;
+}
+
+.slider-content {
+  @apply z-10 flex items-center justify-center w-[100vw] gap-10 ipadPro:gap-9 ipad:gap-6 mobile:gap-5;
+}
+
+@media (min-width: 835px) {
+  .slider-navigation {
+    @apply justify-between absolute left-[50%] top-[50%] -translate-x-[50%] -translate-y-[50%];
+  }
+}
+
+.slider-navigation {
+  @apply z-10 flex items-center justify-end gap-4 ipadPro:mt-5 w-[90%];
+}
+
+.slider-nav-button {
+  @apply bg-white rounded-full w-[48px] h-[48px] flex items-center justify-center;
 }
 
 .slider-item .top {
