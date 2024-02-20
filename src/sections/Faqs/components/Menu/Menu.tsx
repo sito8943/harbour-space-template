@@ -4,9 +4,11 @@ import { css } from "@emotion/css";
 // images
 import chevronDown from "assets/images/chevron-down.svg";
 
+// components
+import MenuItem from "./MenuItem";
+
 // styles
 import "./styles.css";
-import MenuItem from "./MenuItem";
 
 type MenuPropType = {
   items: string[];
@@ -58,7 +60,7 @@ function Menu(props: MenuPropType) {
           <img
             className={`w-4 h-4 ipadPro:w-3 ipadPro:h-3 ${opened ? "rotate-180" : "rotate-0"}`}
             src={chevronDown}
-            alt="Downward-pointing chevron icon"
+            alt={`${opened ? "Upward" : "Downward"}-pointing chevron icon`}
           />
         </div>
       </button>

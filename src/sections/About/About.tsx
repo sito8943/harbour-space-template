@@ -1,4 +1,4 @@
-// sections
+// components
 import { GridSection, InfoSection } from "./components";
 
 // styles

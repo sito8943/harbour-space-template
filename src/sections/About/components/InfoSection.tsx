@@ -7,6 +7,8 @@ import { Column } from "components";
 
 // providers
 import { useScholarship } from "providers";
+
+// utils
 import { renderArrayOfHtml } from "utils";
 
 function InfoSection() {
