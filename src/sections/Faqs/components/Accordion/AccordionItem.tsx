@@ -1,4 +1,4 @@
-import { memo, useState } from "react";
+import { memo, useState, useRef } from "react";
 
 // image
 import minus from "assets/images/minus.svg";
@@ -6,6 +6,7 @@ import plus from "assets/images/plus.svg";
 
 // types
 import { Faq, renderArrayOfHtml } from "utils";
+import AccordionItemButton from "./AccordionItemButton";
 
 type AccordionItemPropType = Faq & {
   firstItem?: boolean;
@@ -14,7 +15,14 @@ type AccordionItemPropType = Faq & {
 };
 
 function AccordionItem(prop: AccordionItemPropType) {
-  const { firstItem, defaultOpened, onChange, type, question, answer } = prop;
+  const {
+    firstItem,
+    defaultOpened = false,
+    onChange,
+    type,
+    question,
+    answer,
+  } = prop;
 
   const [active, setActive] = useState(defaultOpened);
 
@@ -23,17 +31,15 @@ function AccordionItem(prop: AccordionItemPropType) {
       <li className="item">
         <hr className={firstItem ? "ipad:opacity-0 ipad:mt-0" : ""} />
         <div className="item-box">
-          <button
+          <AccordionItemButton
+            opened={active}
             onClick={() => {
               setActive((active) => !active);
               onChange && onChange(active ? "" : question);
             }}
             name={`${active ? "reduce" : "expand"}`}
             aria-label={`click to ${active ? "reduce" : "expand"} ${question}`}
-            className={active ? "reduce" : "expand"}
-          >
-            <img src={active ? minus : plus} alt="Minus symbol icon" />
-          </button>
+          />
           <h3>{type}</h3>
           <div className="item-content">
             <p className="mb-5">
