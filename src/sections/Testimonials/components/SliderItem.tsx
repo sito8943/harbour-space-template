@@ -2,10 +2,16 @@
 import irene from "assets/images/irene.png";
 import linkedin from "assets/images/linkedin.png";
 
+// utils
+import { Testimonial } from "utils";
+
 // styles
 import "./styles.css";
 
-function SliderItem() {
+type SliderItemProp = Testimonial;
+
+function SliderItem(props: SliderItemProp) {
+  /* IMPORTANT AS API DOESN'T BRING TESTIMONIALS WILL US EXAMPLE ONLY FOR SHOWN */
   return (
     <div className="slider-item">
       <div className="top card-borders">
