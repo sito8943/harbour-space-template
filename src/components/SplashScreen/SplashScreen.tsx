@@ -1,5 +1,3 @@
-import { css } from "@emotion/css";
-
 // images
 import logo from "assets/images/logo-primary.svg";
 
