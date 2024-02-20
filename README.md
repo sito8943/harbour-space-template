@@ -1,30 +1,29 @@
-# React + TypeScript + Vite
+# HARBOUR SPACE CHALLENGE
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## How to run?
 
-Currently, two official plugins are available:
+Install dependencies
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+`npm install`
 
-## Expanding the ESLint configuration
+Run application
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+`npm run start`
 
-- Configure the top-level `parserOptions` property like this:
+*Note: The Home page will redirect you to a details page of a scholarship*
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+Why this?
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Because this example is about to make a View to load a Scholarship so the Home page won't be "necessary".
+
+### Important Libs
+
+- @emotion/css for dynamics css classes
+- @tanstack/react-query for api call
+- react for UI and State management
+- react-router-dom for routing
+- jest for testing
+- tailwindcss for css
+- vite for development
+
+**Author: Carlos Andrés Mora González**
