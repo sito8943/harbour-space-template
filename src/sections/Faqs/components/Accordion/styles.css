@@ -1,6 +1,169 @@
 .accordion {
+  /* sizes */
+  --outer-container-size: 48px; /*big: 20rem*/
+  --inner-container-size: 32px; /*big: 19rem*/
+
+  --plus-bar-width: 13px; /*big: 4rem*/
+  --plus-bar-height: 1px; /*big: 0.35rem*/
+
+  /* duration */
+  --inner-circle-transition-duration: 1s;
+  --plus-animation-duration: 0.5s;
+  --plus-container-transition-duration: 0.5s;
+  --outer-container--transition: 0.2s;
+  --track-outline--transition: 0.2s;
+
+  /* colors */
+  --main-color: #6761c0;
+  --secondary-color: #8c899b;
+
   transition: grid-template-rows 600ms ease-in;
   @apply w-full grid;
+}
+
+.btn-element {
+  position: relative;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+.back {
+  position: relative;
+  background: #fff;
+  width: var(--outer-container-size);
+  height: var(--outer-container-size);
+  border-radius: 50%;
+  transition: all var(--outer-container--transition) ease;
+}
+.inner {
+  position: absolute;
+  background: #fff;
+  width: var(--inner-container-size);
+  height: var(--inner-container-size);
+  border-radius: 50%;
+  inset: 0;
+  margin: auto;
+  transition: transform var(--inner-circle-transition-duration) ease;
+}
+.small-inner-circle {
+  transform: scale(0);
+}
+
+.outline-wrapper {
+  position: absolute;
+  width: var(--outer-container-size);
+  height: var(--outer-container-size);
+  inset: 0;
+  margin: auto;
+}
+.outline-wrapper svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+}
+
+.track-outline circle {
+  transition: all var(--track-outline--transition) ease;
+}
+
+.icon {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.rotate-icon-forwards {
+  transition: transform var(--plus-container-transition-duration) ease;
+  transform: rotate(180deg);
+}
+.rotate-icon-backwards {
+  transition: transform var(--plus-container-transition-duration) ease;
+  transform: rotate(-180deg);
+}
+
+.plus-hor,
+.plus-ver {
+  position: absolute;
+  width: var(--plus-bar-width);
+  height: var(--plus-bar-height);
+  border-radius: 4px;
+  margin: auto;
+  z-index: 2;
+  inset: 0;
+  background-color: var(--secondary-color);
+}
+.plus-ver {
+  transform: rotate(90deg);
+}
+
+.animate-plus-hor-close-to-open {
+  animation: plus-hor-open var(--plus-animation-duration) ease forwards;
+}
+.animate-plus-ver-close-to-open {
+  animation: plus-ver-open var(--plus-animation-duration) ease forwards;
+}
+
+.animate-plus-hor-open-to-close {
+  animation: plus-hor-open-reverse var(--plus-animation-duration) ease reverse
+    forwards;
+}
+.animate-plus-ver-open-to-close {
+  animation: plus-ver-open-reverse var(--plus-animation-duration) ease reverse
+    forwards;
+}
+
+@keyframes plus-hor-open {
+  0% {
+    transform: rotate(0deg);
+    background-color: var(--main-color);
+  }
+
+  100% {
+    transform: rotate(180deg);
+    background-color: #fff;
+  }
+}
+@keyframes plus-hor-open-reverse {
+  0% {
+    transform: rotate(0deg);
+    background-color: var(--main-color);
+  }
+
+  100% {
+    transform: rotate(180deg);
+    background-color: #fff;
+  }
+}
+@keyframes plus-ver-open {
+  0% {
+    transform: rotate(90deg);
+    background-color: var(--main-color);
+  }
+
+  100% {
+    transform: rotate(180deg);
+    background-color: #fff;
+  }
+}
+@keyframes plus-ver-open-reverse {
+  0% {
+    transform: rotate(90deg);
+    background-color: var(--main-color);
+  }
+
+  100% {
+    transform: rotate(180deg);
+    background-color: #fff;
+  }
+}
+
+.main-color {
+  background-color: var(--main-color);
+}
+.secondary-color {
+  background-color: var(--secondary-color);
 }
 
 .accordion hr {
@@ -25,16 +188,4 @@
 .accordion .item-content {
   width: 50%;
   @apply pt-1 pr-4 flex flex-col gap-5 ipad:pr-0 ipad:w-[80%];
-}
-
-.accordion button {
-  @apply w-12 h-12 flex items-center justify-center absolute -top-1 right-0 rounded-full;
-}
-
-.accordion .reduce {
-  @apply bg-primary;
-}
-
-.accordion .expand {
-  border: 1px solid #dadada;
 }
