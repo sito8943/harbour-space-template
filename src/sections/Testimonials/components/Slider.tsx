@@ -17,6 +17,11 @@ type SliderProp = {
 function Slider(props: SliderProp) {
   const { items } = props;
 
+  const [animated, setAnimated] = useState(true);
+  const [disabled, setDisabled] = useState(false);
+
+  const screenLength = useMemo(() => items.length + 6, [items]);
+
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const onWindowResize = useCallback(
     () => setWindowWidth(window.innerWidth),
@@ -31,11 +36,26 @@ function Slider(props: SliderProp) {
   }, [onWindowResize]);
 
   const renderItems = useMemo(
-    () => items.map((item) => <SliderItem key={item.id} {...item} />),
+    () => (
+      <>
+        {/* last three element */}
+        {items.slice(-3).map((item, i) => (
+          <SliderItem key={item.id} {...item} />
+        ))}
+        {/* all elements */}
+        {items.map((item, i) => (
+          <SliderItem key={item.id} {...item} />
+        ))}
+        {/* first three element */}
+        {items.slice(0, 3).map((item, i) => (
+          <SliderItem key={item.id} {...item} />
+        ))}
+      </>
+    ),
     [items]
   );
 
-  const [displacement, setDisplacement] = useState(0);
+  const [displacement, setDisplacement] = useState(-2);
 
   const currentSizeDisplacementOffset = useMemo(() => {
     switch (true) {
@@ -62,11 +82,40 @@ function Slider(props: SliderProp) {
 
   const moveBackward = () => setDisplacement(displacement + 1);
 
+  useEffect(() => {
+    if (displacement === -1) {
+      setDisabled(true);
+      setTimeout(() => {
+        setAnimated(false);
+        setDisplacement(-(screenLength - 2));
+        setTimeout(() => {
+          setAnimated(true);
+          setDisabled(false);
+        }, 100);
+      }, 2061);
+    } else if (displacement === -(screenLength - 1)) {
+      setDisabled(true);
+      setTimeout(() => {
+        setAnimated(false);
+        setDisplacement(-1);
+        setTimeout(() => {
+          setAnimated(true);
+          setDisabled(false);
+        }, 100);
+      }, 2061);
+    }
+  }, [displacement, screenLength]);
+
   return (
     <div className="slider">
-      <div className={`slider-content ${transformMovement}`}>{renderItems}</div>
+      <div
+        className={`slider-content ${animated ? "slider-content-animation" : ""} ${transformMovement}`}
+      >
+        {renderItems}
+      </div>
       <div className="slider-navigation">
         <button
+          disabled={disabled}
           onClick={moveBackward}
           className="slider-nav-button image-borders"
         >
@@ -77,6 +126,7 @@ function Slider(props: SliderProp) {
           />
         </button>
         <button
+          disabled={disabled}
           onClick={moveForward}
           className="slider-nav-button image-borders"
         >
