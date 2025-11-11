@@ -21,7 +21,7 @@ const harbourSpaceClient = new HarbourSpaceApiClient();
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <QueryClientProvider client={queryClient}>
     <HarbourSpaceApiClientProvider client={harbourSpaceClient}>
-      <BrowserRouter>
+      <BrowserRouter basename={import.meta.env.BASE_URL}>
         <Routes>
           <Route path="/" element={<Outlet />}>
             <Route index element={<Home />} />

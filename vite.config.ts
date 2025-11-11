@@ -3,19 +3,25 @@ import react from "@vitejs/plugin-react";
 import path from "path";
 
 // https://vitejs.dev/config/
-export default defineConfig({
-  plugins: [react()],
-  resolve: {
-    alias: {
-      assets: path.resolve(__dirname, "./src/assets"),
-      components: path.resolve(__dirname, "./src/components"),
-      utils: path.resolve(__dirname, "./src/utils"),
-      sections: path.resolve(__dirname, "./src/sections"),
-      providers: path.resolve(__dirname, "./src/providers"),
-      views: path.resolve(__dirname, "./src/views"),
+export default defineConfig(() => {
+  // Allow overriding base path for GitHub Pages via env (e.g., "/repo-name/")
+  const base = process.env.BASE_PATH || "/";
+
+  return {
+    base,
+    plugins: [react()],
+    resolve: {
+      alias: {
+        assets: path.resolve(__dirname, "./src/assets"),
+        components: path.resolve(__dirname, "./src/components"),
+        utils: path.resolve(__dirname, "./src/utils"),
+        sections: path.resolve(__dirname, "./src/sections"),
+        providers: path.resolve(__dirname, "./src/providers"),
+        views: path.resolve(__dirname, "./src/views"),
+      },
     },
-  },
-  server: {
-    port: 3000,
-  },
+    server: {
+      port: 3000,
+    },
+  };
 });
